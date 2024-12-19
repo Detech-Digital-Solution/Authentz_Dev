@@ -1,586 +1,713 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>company</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .progress-ring-container {
-          position: relative;
-          width: 12rem;
-          height: 12rem;
-          transition: transform 0.3s ease;
-      }
 
-      .progress-ring-container:hover {
-          transform: scale(1.05);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>company</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .progress-ring-container {
+      position: relative;
+      width: 12rem;
+      height: 12rem;
+      transition: transform 0.3s ease;
+    }
 
-      .progress-ring {
-          transform: rotate(-90deg);
-      }
+    .progress-ring-container:hover {
+      transform: scale(1.05);
+    }
 
-      .progress-circle {
-          transition: stroke-dasharray 0.1s linear;
-      }
+    .progress-ring {
+      transform: rotate(-90deg);
+    }
 
-      .progress-circle-bg {
-          opacity: 0.2;
-      }
+    .progress-circle {
+      transition: stroke-dasharray 0.1s linear;
+    }
 
-      .percentage-display {
-          font-size: 1.875rem;
-          font-weight: 700;
-          color: rgb(88, 28, 135);
-          transition: opacity 0.3s ease;
-      }
+    .progress-circle-bg {
+      opacity: 0.2;
+    }
+
+    .percentage-display {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: rgb(88, 28, 135);
+      transition: opacity 0.3s ease;
+    }
   </style>
-  </head>
-  <body class="bg-[#3D087B]">
-    <nav class=" px-4 py-4 md:px-8">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="text-brand-teal text-2xl font-bold">authentz.</div>
-        
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#" class="text-white hover:text-brand-teal">Home</a>
-          <a href="#" class="text-white hover:text-brand-teal">Product & Services</a>
-          <a href="#" class="text-white hover:text-brand-teal">Knock Knock</a>
-          <div class="relative group">
-            <a href="#" class="text-white hover:text-brand-teal">Company</a>
-          </div>
-        </div>
+</head>
 
-        <div class="hidden md:flex items-center space-x-4">
-          <button class="text-white hover:text-brand-teal">Log in</button>
-          <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700">
-            Sign Up
-          </button>
-        </div>
+<body class="bg-[#3D087B]">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center pl-6">
+        <a href="/pages/index.html">
+          <img src="/assets/images/primary_logo.png" alt="Logo" class="h-6 w-45 mr-2">
+        </a>
+      </div>
 
-        <!-- Mobile menu button -->
-        <button class="md:hidden text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Hamburger Menu for Mobile -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <main class="px-4 py-16 md:py-32">
-      <div class="max-w-7xl mx-auto">
-        <div class="max-w-3xl">
-          <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-            We empower higher education institutions with AI-driven solutions to optimize recruitment, compliance, and admissions, ensuring efficiency and cost savings.
-          </h1>
-        </div>
+      <!-- Navigation Links -->
+      <div id="nav-links"
+        class="hidden md:flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-8 text-white">
+        <a href="/pages/index.html" class="hover:text-[#05DDBE]">Home</a>
+        <a href="/pages/Product&Service.html" class="hover:text-[#05DDBE]">Product & Services</a>
+        <a href="/pages/knock-knock.html" class="hover:text-[#05DDBE]">Knock Knock</a>
+        <a href="/pages/company.html" class="hover:text-[#05DDBE]">Company</a>
       </div>
-    </main>
 
-    <!--Authentz Story -->
-    <div class="bg-gray-100">
-      <div class="max-w-6xl mx-auto px-4 py-16">
-        <h1 class="text-4xl font-bold text-purple-700 mb-8">Authentz Story</h1>
-    
-        <div class="space-y-6 text-gray-700">
-          <p class="leading-relaxed">
-            Authentz was created with a vision to help the clients in higher education market to leverage cutting edge
-            technology to manage recruitment and admissions lifecycle. We empower stakeholders to reach new levels of
-            excellence through our GEN AI transformation and outsourcing solutions.
-          </p>
-    
-          <p class="leading-relaxed">
-            Authentz partnership which propels you forward through experience of building and deploying innovative solutions
-            ,anticipating needs and making you future ready today.
-          </p>
-    
-          <p class="leading-relaxed">
-            Solutions borne out of deep data insights enabling customized and context rich support help our clients achieve
-            measurable results and achieve scalability in a short time span.
-          </p>
-        </div>
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <button
+          class="px-4 py-2 text-[#F4550C] border border-[#F4550C] rounded-full hover:bg-[#F4550C] hover:text-white">
+          Log In
+        </button>
+        <button class="px-4 py-2 text-white bg-[#F4550C] rounded-full hover:bg-orange-600">
+          Sign Up
+        </button>
       </div>
     </div>
 
-    <!-- Technology -->
-    <div class="bg-gray-50">
-      <div class="container mx-auto px-4 py-12">
-          <h1 class="text-4xl md:text-5xl font-bold text-center text-purple-900 mb-6">Technology</h1>
-          
-          <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-              Authentrz brings out its Next GEN GOLD STANDARD AI powered Recruitment, Compliance & Admissions solution, a platform so unique and powerful that it allows you to get your work done at speed.
-          </p>
-  
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <!-- Accuracy -->
-              <div class="flex flex-col items-center">
-                  <div class="progress-ring-container" data-stat="Accuracy" data-percentage="99">
-                      <svg class="progress-ring w-full h-full" viewBox="0 0 100 100">
-                          <circle 
-                              class="progress-circle-bg text-purple-200" 
-                              stroke="currentColor" 
-                              stroke-width="8" 
-                              fill="transparent" 
-                              r="44" 
-                              cx="50" 
-                              cy="50"
-                          />
-                          <circle 
-                              class="progress-circle text-purple-700" 
-                              stroke="currentColor" 
-                              stroke-width="8" 
-                              fill="transparent" 
-                              r="44" 
-                              cx="50" 
-                              cy="50"
-                          />
-                      </svg>
-                      <div class="absolute inset-0 flex items-center justify-center">
-                          <span class="percentage-display">0%</span>
-                      </div>
-                  </div>
-                  <h2 class="mt-4 text-xl font-semibold text-purple-900">Accuracy</h2>
-              </div>
-  
-              <!-- Reduced Processing Time -->
-              <div class="flex flex-col items-center">
-                  <div class="progress-ring-container" data-stat="Reduced Processing Time" data-percentage="80">
-                      <svg class="progress-ring w-full h-full" viewBox="0 0 100 100">
-                          <circle 
-                              class="progress-circle-bg text-purple-200" 
-                              stroke="currentColor" 
-                              stroke-width="8" 
-                              fill="transparent" 
-                              r="44" 
-                              cx="50" 
-                              cy="50"
-                          />
-                          <circle 
-                              class="progress-circle text-purple-700" 
-                              stroke="currentColor" 
-                              stroke-width="8" 
-                              fill="transparent" 
-                              r="44" 
-                              cx="50" 
-                              cy="50"
-                          />
-                      </svg>
-                      <div class="absolute inset-0 flex items-center justify-center">
-                          <span class="percentage-display">0%</span>
-                      </div>
-                  </div>
-                  <h2 class="mt-4 text-xl font-semibold text-purple-900">Reduced Processing Time</h2>
-              </div>
-  
-              <!-- Reduced Cost -->
-              <div class="flex flex-col items-center">
-                  <div class="progress-ring-container" data-stat="Reduced Cost" data-percentage="66">
-                      <svg class="progress-ring w-full h-full" viewBox="0 0 100 100">
-                          <circle 
-                              class="progress-circle-bg text-purple-200" 
-                              stroke="currentColor" 
-                              stroke-width="8" 
-                              fill="transparent" 
-                              r="44" 
-                              cx="50" 
-                              cy="50"
-                          />
-                          <circle 
-                              class="progress-circle text-purple-700" 
-                              stroke="currentColor" 
-                              stroke-width="8" 
-                              fill="transparent" 
-                              r="44" 
-                              cx="50" 
-                              cy="50"
-                          />
-                      </svg>
-                      <div class="absolute inset-0 flex items-center justify-center">
-                          <span class="percentage-display">0%</span>
-                      </div>
-                  </div>
-                  <h2 class="mt-4 text-xl font-semibold text-purple-900">Reduced Cost</h2>
-              </div>
-          </div>
+    <!-- Mobile Navigation Links -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
+      <a href="#" class="block text-white hover:text-[#05DDBE]">Home</a>
+      <a href="/pages/Product&Service.html" class="block text-white hover:text-[#05DDBE]">Product & Services</a>
+      <a href="/pages/knock-knock.html" class="block text-white hover:text-[#05DDBE]">Knock Knock</a>
+      <a href="/pages/company.html" class="block text-white hover:text-[#05DDBE]">Company</a>
+    </div>
+  </nav>
+
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <main class="px-4 py-16 md:py-32">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl">
+        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+          We empower higher education institutions with AI-driven solutions to optimize recruitment, compliance, and
+          admissions, ensuring efficiency and cost savings.
+        </h1>
       </div>
-  
-      <script>
-          // Animation utility function
-          const animate = (start, end, duration, callback) => {
-              const startTime = performance.now();
-              
-              const update = (currentTime) => {
-                  const elapsed = currentTime - startTime;
-                  const progress = Math.min(elapsed / duration, 1);
-                  
-                  // Easing function for smooth animation
-                  const easeOutQuad = 1 - Math.pow(1 - progress, 2);
-                  const currentValue = start + (end - start) * easeOutQuad;
-                  
-                  callback(currentValue);
-                  
-                  if (progress < 1) {
-                      requestAnimationFrame(update);
-                  }
-              };
-              
-              requestAnimationFrame(update);
-          };
-  
-          // Progress Ring class
-          class ProgressRing {
-              constructor(element) {
-                  this.wrapper = element;
-                  this.percentage = parseInt(element.dataset.percentage, 10);
-                  this.progressCircle = element.querySelector('.progress-circle');
-                  this.percentageDisplay = element.querySelector('.percentage-display');
-                  this.radius = this.progressCircle.getAttribute('r');
-                  this.circumference = 2 * Math.PI * this.radius;
-                  this.value = (this.percentage / 100) * this.circumference;
-                  
-                  this.init();
-                  this.setupHoverEffect();
-              }
-  
-              updateProgress(value) {
-                  const dashArray = `${value} ${this.circumference}`;
-                  this.progressCircle.style.strokeDasharray = dashArray;
-                  
-                  // Update percentage display
-                  const currentPercentage = Math.round((value / this.circumference) * 100);
-                  this.percentageDisplay.textContent = `${currentPercentage}%`;
-              }
-  
-              init() {
-                  // Set initial state
-                  this.updateProgress(0);
-                  
-                  // Start animation after a small delay
-                  setTimeout(() => {
-                      animate(0, this.value, 2000, (value) => {
-                          this.updateProgress(value);
-                      });
-                  }, 300);
-              }
-  
-              reset() {
-                  this.updateProgress(0);
-                  animate(0, this.value, 2000, (value) => {
-                      this.updateProgress(value);
-                  });
-              }
-  
-              setupHoverEffect() {
-                  this.wrapper.addEventListener('mouseenter', () => {
-                      this.reset();
-                  });
-              }
-          }
-  
-          // Initialize all progress rings when the DOM is loaded
-          document.addEventListener('DOMContentLoaded', () => {
-              const ringContainers = document.querySelectorAll('.progress-ring-container');
-              ringContainers.forEach(container => new ProgressRing(container));
-          });
-      </script>
+    </div>
+  </main>
+
+  <!--Authentz Story -->
+  <div class="bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h1 class="text-4xl font-bold text-purple-700 mb-8">Authentz Story</h1>
+
+      <div class="space-y-6 text-gray-700">
+        <p class="leading-relaxed">
+          Authentz was created with a vision to help the clients in higher education market to leverage cutting edge
+          technology to manage recruitment and admissions lifecycle. We empower stakeholders to reach new levels of
+          excellence through our GEN AI transformation and outsourcing solutions.
+        </p>
+
+        <p class="leading-relaxed">
+          Authentz partnership which propels you forward through experience of building and deploying innovative
+          solutions
+          ,anticipating needs and making you future ready today.
+        </p>
+
+        <p class="leading-relaxed">
+          Solutions borne out of deep data insights enabling customized and context rich support help our clients
+          achieve
+          measurable results and achieve scalability in a short time span.
+        </p>
+      </div>
+    </div>
   </div>
 
-    <div class="bg-orange-600 min-h-screen">
-        <main class="container-custom">
-          <div class="section-grid">
-            <!-- Left Section (SVG Image) -->
-            <div class="w-full md:w-1/2">
-              <img 
-                src="your-svg-path.svg" 
-                alt="Analytics Illustration" 
-                class="w-full max-w-lg mx-auto"
-              >
-            </div>
-      
-            <!-- Right Section (Content) -->
-            <div class="w-full md:w-1/2 space-y-8">
-              <h1 class="text-4xl md:text-6xl font-bold text-white mb-8">
-                Differentiator
-              </h1>
-      
-              <div class="space-y-4">
-                <button class="btn btn-primary">
-                  User Friendly Workflow & Interface
-                </button>
-      
-                <button class="btn btn-secondary">
-                  Real Time Data Insights
-                </button>
-      
-                <button class="btn btn-primary">
-                  Customized Risk Control
-                </button>
-      
-                <button class="btn btn-secondary">
-                  Reduce Student Attrition
-                </button>
-              </div>
-            </div>
-          </div>
-        </main>
-    </div>
-    <div>
-        <div class="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-purple-800 sm:text-4xl">
-                        Technology Partners
-                    </h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-base text-gray-600 leading-relaxed">
-                        Our Technology partners bring to the table a comprehensive range of talent, GEN AI technology, and customizable development solutions. From leading-edge cloud engineering to data-driven insights our partners provide the tools and expertise needed to thrive. Our tailored services are designed to meet the unique needs of your business, ensuring seamless integration, scalability, and success.
-                    </p>
-                </div>
-    
-                <div class="mt-16">
-                    <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
-                        <div class="col-span-1 flex justify-center items-center">
-                            <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                                src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
-                                alt="AWS Logo">
-                        </div>
-                        <div class="col-span-1 flex justify-center items-center">
-                            <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                                src="https://wac-cdn.atlassian.com/dam/jcr:616e6748-ad8c-48d9-ae93-e49019ed5259/Atlassian-horizontal-blue-rgb.svg"
-                                alt="Atlassian Logo">
-                        </div>
-                        <div class="col-span-1 flex justify-center items-center">
-                            <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png"
-                                alt="GitHub Logo">
-                        </div>
-                        <div class="col-span-1 flex justify-center items-center">
-                            <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                                src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"
-                                alt="OpenAI Logo">
-                        </div>
-                        <div class="col-span-1 flex justify-center items-center">
-                            <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                                src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
-                                alt="Azure Logo">
-                        </div>
-                        <div class="col-span-1 flex justify-center items-center">
-                            <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                                src="https://workspace.google.com/static/img/google-workspace-logo.svg"
-                                alt="Google Workspace Logo">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
-          <!-- Board of Directors Section -->
-          <section class="text-center space-y-6">
-            <h2 class="text-4xl font-bold text-purple-800">Board of Directors</h2>
-            <p class="text-gray-600 leading-relaxed">
-              Our Board of Directors is composed of a diverse group of experienced and passionate leaders who bring a wealth of expertise across various industries. Together, they provide strategic guidance, oversight, and invaluable insights to ensure the company's growth, stability, and long-term success. The Board plays a critical role in shaping the company's vision, corporate governance, and decision-making, aligning our goals with the best interests of our stakeholders.
-            </p>
-          </section>
-    
-          <!-- Decorative Divider -->
-          <div class="border-t-2 border-gray-200 w-3/4 mx-auto"></div>
-    
-          <!-- Management Team Section -->
-          <section class="text-center space-y-6">
-            <h2 class="text-4xl font-bold text-purple-800">Management team</h2>
-            <p class="text-gray-600 leading-relaxed">
-              At Authentz, our success is driven by the expertise, passion, and leadership of our exceptional management team. Each of our leaders brings a wealth of experience, strategic vision, and dedication to ensuring we deliver the highest quality products/services to our customers. The team is focused on innovation and helping our clients become successful and competitive.
-            </p>
-          </section>
-        </div>
-    </div>
-    <div class="bg-gray-50">
-        <div class="container mx-auto px-4 py-16">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-              <!-- Left side - Image -->
-              <div class="order-2 md:order-1">
-                <div class="relative">
-                  <div class="rounded-lg overflow-hidden shadow-xl">
-                    <img 
-                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                      alt="Business professionals discussing" 
-                      class="w-full h-auto object-cover"
-                    />
-                  </div>
-                  <div class="absolute bottom-0 left-0 w-full h-1 bg-purple-600"></div>
-                </div>
-              </div>
-      
-              <!-- Right side - Content -->
-              <div class="order-1 md:order-2 space-y-8">
-                <h2 class="text-4xl font-bold text-purple-900 mb-8">Why Do You Need To Choose Us</h2>
-                
-                <div class="space-y-6">
-                  <!-- Point 1 -->
-                  <div class="flex items-start gap-4">
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">1</span>
-                    <div>
-                      <p class="font-semibold text-gray-800">Expertise: Over 100 Years Of Combined Experience In The Higher Education Sector.</p>
-                    </div>
-                  </div>
-      
-                  <!-- Point 2 -->
-                  <div class="flex items-start gap-4">
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">2</span>
-                    <div>
-                      <p class="font-semibold text-gray-800">AI-Powered Solutions: Streamline Recruitment, Compliance, And Admissions With 99% Accuracy And Reduced Costs.</p>
-                    </div>
-                  </div>
-      
-                  <!-- Point 3 -->
-                  <div class="flex items-start gap-4">
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">3</span>
-                    <div>
-                      <p class="font-semibold text-gray-800">Real-Time Insights: Gain Valuable Data Insights To Optimize Workflows And Decision-Making.</p>
-                    </div>
-                  </div>
-      
-                  <!-- Point 4 -->
-                  <div class="flex items-start gap-4">
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">4</span>
-                    <div>
-                      <p class="font-semibold text-gray-800">Customizable Risk Control: Tailor Risk Parameters Based On Regional Market Needs For Improved Student Recruitment.</p>
-                    </div>
-                  </div>
-      
-                  <!-- Point 5 -->
-                  <div class="flex items-start gap-4">
-                    <span class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">5</span>
-                    <div>
-                      <p class="font-semibold text-gray-800">Seamless Integration: Our Platform Integrates Effortlessly With Your Existing Systems For A User-Friendly Experience.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="bg-gray-50">
-        <section class="py-16">
-            <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-4xl font-bold text-purple-800 mb-6">
-                        We are located in
-                    </h1>
-                    <p class="text-gray-600 mb-12 text-sm max-w-3xl mx-auto">
-                        Our Board consists of leaders & visionaries from education and other fields who continue to guide mentor and challenge our capabilities to ensure we provide our clients with ground breaking, cost effective and ground breaking solutions continuously.
-                    </p>
-                    
-                    <div class="flex flex-row justify-center items-center gap-4 flex-wrap md:flex-nowrap">
-                        <!-- India -->
-                        <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" 
-                                 alt="India flag" 
-                                 class="w-6 h-6 rounded-full mr-2">
-                            <span class="text-gray-700 text-sm">India</span>
-                        </div>
-    
-                        <!-- UK -->
-                        <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" 
-                                 alt="UK flag" 
-                                 class="w-6 h-6 rounded-full mr-2">
-                            <span class="text-gray-700 text-sm">UK</span>
-                        </div>
-    
-                        <!-- USA -->
-                        <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" 
-                                 alt="USA flag" 
-                                 class="w-6 h-6 rounded-full mr-2">
-                            <span class="text-gray-700 text-sm">USA</span>
-                        </div>
-    
-                        <!-- Canada -->
-                        <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg" 
-                                 alt="Canada flag" 
-                                 class="w-6 h-6 rounded-full mr-2">
-                            <span class="text-gray-700 text-sm">Canada</span>
-                        </div>
-    
-                        <!-- Australia -->
-                        <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg" 
-                                 alt="Australia flag" 
-                                 class="w-6 h-6 rounded-full mr-2">
-                            <span class="text-gray-700 text-sm">Australia</span>
-                        </div>
-    
-                        <!-- Singapore -->
-                        <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg" 
-                                 alt="Singapore flag" 
-                                 class="w-6 h-6 rounded-full mr-2">
-                            <span class="text-gray-700 text-sm">Singapore</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <footer class="bg-[#3D087B] text-white">
-        <div class="max-w-7xl mx-auto px-4 py-8">
-          <div class="flex flex-col md:flex-row justify-between items-center mb-8">
-            <!-- Logo -->
-            <div class="mb-6 md:mb-0">
-              <h2 class="text-2xl font-bold">authentz.</h2>
-            </div>
-            
-            <!-- Navigation -->
-            <nav class="flex flex-wrap justify-center gap-6 text-sm mb-6 md:mb-0">
-              <a href="#" class="hover:text-gray-300">Home</a>
-              <a href="#" class="hover:text-gray-300">Product & Services</a>
-              <a href="#" class="hover:text-gray-300">Knock Knock</a>
-              <a href="#" class="hover:text-gray-300">About Us</a>
-              <a href="#" class="hover:text-gray-300">Partners</a>
-              <a href="#" class="hover:text-gray-300">Contact Us</a>
-            </nav>
+  <!-- Technology -->
+  <div class="bg-gray-50">
+    <div class="container mx-auto px-4 py-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-center text-purple-900 mb-6">Technology</h1>
 
-            <!-- Social Icons -->
-            <div class="flex items-center gap-4">
-              <a href="#" class="text-white hover:opacity-75" aria-label="YouTube">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-              </a>
-              <a href="#" class="text-white hover:opacity-75" aria-label="Facebook">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </a>
-              <a href="#" class="text-white hover:opacity-75" aria-label="Twitter">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-              <a href="#" class="text-white hover:opacity-75" aria-label="Instagram">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
-                </svg>
-              </a>
-              <a href="#" class="text-white hover:opacity-75" aria-label="LinkedIn">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        Authentrz brings out its Next GEN GOLD STANDARD AI powered Recruitment, Compliance & Admissions solution, a
+        platform so unique and powerful that it allows you to get your work done at speed.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Accuracy -->
+        <div class="flex flex-col items-center">
+          <div class="progress-ring-container" data-stat="Accuracy" data-percentage="99">
+            <svg class="progress-ring w-full h-full" viewBox="0 0 100 100">
+              <circle class="progress-circle-bg text-purple-200" stroke="currentColor" stroke-width="8"
+                fill="transparent" r="44" cx="50" cy="50" />
+              <circle class="progress-circle text-purple-700" stroke="currentColor" stroke-width="8" fill="transparent"
+                r="44" cx="50" cy="50" />
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="percentage-display">0%</span>
             </div>
           </div>
-          
-          <!-- Copyright -->
-          <div class="text-center text-sm">
-            <p>Copyright authentz.com©2024. All rights reserved</p>
+          <h2 class="mt-4 text-xl font-semibold text-purple-900">Accuracy</h2>
+        </div>
+
+        <!-- Reduced Processing Time -->
+        <div class="flex flex-col items-center">
+          <div class="progress-ring-container" data-stat="Reduced Processing Time" data-percentage="80">
+            <svg class="progress-ring w-full h-full" viewBox="0 0 100 100">
+              <circle class="progress-circle-bg text-purple-200" stroke="currentColor" stroke-width="8"
+                fill="transparent" r="44" cx="50" cy="50" />
+              <circle class="progress-circle text-purple-700" stroke="currentColor" stroke-width="8" fill="transparent"
+                r="44" cx="50" cy="50" />
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="percentage-display">0%</span>
+            </div>
+          </div>
+          <h2 class="mt-4 text-xl font-semibold text-purple-900">Reduced Processing Time</h2>
+        </div>
+
+        <!-- Reduced Cost -->
+        <div class="flex flex-col items-center">
+          <div class="progress-ring-container" data-stat="Reduced Cost" data-percentage="66">
+            <svg class="progress-ring w-full h-full" viewBox="0 0 100 100">
+              <circle class="progress-circle-bg text-purple-200" stroke="currentColor" stroke-width="8"
+                fill="transparent" r="44" cx="50" cy="50" />
+              <circle class="progress-circle text-purple-700" stroke="currentColor" stroke-width="8" fill="transparent"
+                r="44" cx="50" cy="50" />
+            </svg>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="percentage-display">0%</span>
+            </div>
+          </div>
+          <h2 class="mt-4 text-xl font-semibold text-purple-900">Reduced Cost</h2>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Animation utility function
+      const animate = (start, end, duration, callback) => {
+        const startTime = performance.now();
+
+        const update = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          // Easing function for smooth animation
+          const easeOutQuad = 1 - Math.pow(1 - progress, 2);
+          const currentValue = start + (end - start) * easeOutQuad;
+
+          callback(currentValue);
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          }
+        };
+
+        requestAnimationFrame(update);
+      };
+
+      // Progress Ring class
+      class ProgressRing {
+        constructor(element) {
+          this.wrapper = element;
+          this.percentage = parseInt(element.dataset.percentage, 10);
+          this.progressCircle = element.querySelector('.progress-circle');
+          this.percentageDisplay = element.querySelector('.percentage-display');
+          this.radius = this.progressCircle.getAttribute('r');
+          this.circumference = 2 * Math.PI * this.radius;
+          this.value = (this.percentage / 100) * this.circumference;
+
+          this.init();
+          this.setupHoverEffect();
+        }
+
+        updateProgress(value) {
+          const dashArray = `${value} ${this.circumference}`;
+          this.progressCircle.style.strokeDasharray = dashArray;
+
+          // Update percentage display
+          const currentPercentage = Math.round((value / this.circumference) * 100);
+          this.percentageDisplay.textContent = `${currentPercentage}%`;
+        }
+
+        init() {
+          // Set initial state
+          this.updateProgress(0);
+
+          // Start animation after a small delay
+          setTimeout(() => {
+            animate(0, this.value, 2000, (value) => {
+              this.updateProgress(value);
+            });
+          }, 300);
+        }
+
+        reset() {
+          this.updateProgress(0);
+          animate(0, this.value, 2000, (value) => {
+            this.updateProgress(value);
+          });
+        }
+
+        setupHoverEffect() {
+          this.wrapper.addEventListener('mouseenter', () => {
+            this.reset();
+          });
+        }
+      }
+
+      // Initialize all progress rings when the DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        const ringContainers = document.querySelectorAll('.progress-ring-container');
+        ringContainers.forEach(container => new ProgressRing(container));
+      });
+    </script>
+  </div>
+  <!--orange slide opreation-->
+  <div class="bg-[#FF4D07] min-h-[80vh]">
+    <div class="container mx-auto px-4 py-8 ">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div class="w-full lg:w-1/2 space-y-4">
+                <h1 class="text-4xl font-bold text-white mb-6">Differentiator</h1>
+                <div class="flex flex-col gap-3">
+                    <button class="bg-white hover:bg-white/90 text-left px-6 py-3 rounded w-full transition-all">
+                        User Friendly Workflow & Interface
+                    </button>
+                    <button class="bg-white hover:bg-white/90 text-left px-6 py-3 rounded w-full transition-all">
+                        Real Time Data Insights
+                    </button>
+                    <button class="bg-white hover:bg-white/90 text-left px-6 py-3 rounded w-full transition-all">
+                        Customized Risk Control
+                    </button>
+                    <button class="bg-white hover:bg-white/90 text-left px-6 py-3 rounded w-full transition-all">
+                        Reduce Student Attrition
+                    </button>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2">
+                <div class="relative w-full flex justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="528" height="403" viewBox="0 0 528 403" fill="none">
+                    <g clip-path="url(#clip0_379_12065)">
+                    <path d="M314.625 73.3934C314.076 70.2118 311.543 69.5 310.477 69.3421C310.311 68.245 309.831 67.3727 309.052 66.7439C307.934 65.8421 306.463 65.6735 305.552 65.6682C306.991 61.6116 310.177 51.7297 307.5 50.654C306.817 50.3784 306.107 50.4212 305.386 50.7771C301.493 52.709 298.02 64.1858 297.267 66.8242C296.145 66.5512 295.183 66.7412 294.4 67.3861C291.257 69.9897 292.511 79.6255 292.734 81.1641L292.152 82.0899C281.319 98.8327 273.929 109.855 272.6 111.257C272.292 111.128 271.485 110.732 269.393 109.528C268.889 109.239 268.326 108.91 267.721 108.554C267.704 108.736 267.672 108.921 267.621 109.111C267.573 109.282 267.506 109.448 267.429 109.608C267.943 109.911 268.428 110.192 268.865 110.446C272.206 112.37 272.495 112.37 272.707 112.37C273.149 112.37 273.816 112.37 293.036 82.6679L293.832 81.3915L293.803 81.1989C293.342 78.2554 292.672 70.1877 295.07 68.2022C295.673 67.7018 296.453 67.6296 297.449 67.9855L297.988 68.1755L298.138 67.6242C299.191 63.7443 302.626 53.3245 305.852 51.7243C306.297 51.5022 306.707 51.4728 307.104 51.6333C308.379 52.1471 306.678 59.5057 304.287 66.0562L303.99 66.8777L304.858 66.7599C304.88 66.7573 307.045 66.479 308.39 67.568C309.033 68.0898 309.397 68.8605 309.472 69.8639L309.51 70.3483L309.995 70.3536C310.126 70.3536 313.24 70.4285 313.631 73.9152L313.679 74.3299L314.094 74.3808C314.277 74.4022 318.542 74.9534 318.173 78.6835C317.974 80.6343 314.925 86.0796 309.585 94.0162L309.467 94.142V94.233L309.387 94.3962C300.233 113.248 287.452 135.575 281.56 136.458C278.556 136.908 272.461 135.508 263.932 132.409C262.654 131.946 261.311 131.443 259.921 130.903C259.787 131.237 259.594 131.545 259.353 131.815C260.805 132.38 262.217 132.912 263.57 133.402C271.244 136.19 276.863 137.598 280.317 137.598C280.831 137.598 281.298 137.566 281.716 137.504C289.633 136.319 305.625 104.564 310.335 94.8618L310.456 94.6156C316.05 86.299 319 80.9741 319.223 78.7933C319.577 75.237 316.57 73.76 314.622 73.3987L314.625 73.3934Z" fill="#070010"/>
+                    <path d="M304.767 78.6301C304.435 78.6301 304.164 78.5284 303.966 78.4133C302.364 77.4821 302.256 73.6878 302.248 73.257L303.304 73.2409C303.328 74.7367 303.717 77.0486 304.496 77.5009C304.628 77.5758 304.85 77.6507 305.279 77.4152C307.296 76.3101 309.001 71.4588 309.488 69.6847L310.509 69.963C310.431 70.2413 308.609 76.7971 305.788 78.3411C305.402 78.5525 305.059 78.6301 304.767 78.6301Z" fill="#070010"/>
+                    <path d="M308.845 82.4351C308.513 82.4351 308.242 82.3334 308.044 82.2184C306.442 81.2899 306.335 77.4928 306.327 77.062L307.382 77.0433C307.407 78.5391 307.795 80.851 308.575 81.3032C308.706 81.3782 308.926 81.4531 309.357 81.2176C311.375 80.1125 313.079 75.2612 313.567 73.4871L314.588 73.7654C314.51 74.0436 312.688 80.5995 309.866 82.1435C309.48 82.3548 309.137 82.4324 308.845 82.4324V82.4351Z" fill="#070010"/>
+                    <path d="M313.457 85.5418C312.881 85.5418 312.363 85.384 311.916 85.0655C310.222 83.8694 310.233 80.8296 310.236 80.7012L311.292 80.7119C311.286 81.4371 311.498 83.4787 312.527 84.2066C313.023 84.5571 313.671 84.5812 314.504 84.2788C317.047 83.3583 318.119 78.7345 318.127 78.689L319.159 78.9218C319.11 79.1358 317.95 84.1557 314.863 85.2716C314.36 85.4535 313.891 85.5445 313.454 85.5445L313.457 85.5418Z" fill="#070010"/>
+                    <path d="M300.828 79.4542C300.568 79.4542 300.308 79.406 300.054 79.3097C297.859 78.4855 297.013 74.2523 296.97 73.6797L298.023 73.5994C298.084 74.4049 298.971 77.7764 300.424 78.3196C300.978 78.5283 301.624 78.2741 302.347 77.565C302.843 77.078 303.068 76.4947 303.036 75.7856C302.881 72.4649 297.356 67.94 297.299 67.8945L297.966 67.0757C298.208 67.2737 303.912 71.9457 304.092 75.7374C304.14 76.7516 303.802 77.6212 303.09 78.3196C302.321 79.0742 301.562 79.4542 300.828 79.4542Z" fill="#070010"/>
+                    <path d="M304.275 66.044L301.944 71.9172L302.926 72.3057L305.256 66.4325L304.275 66.044Z" fill="#070010"/>
+                    <path d="M269.234 104.519C257.606 94.8404 232.011 90.5136 230.556 90.4895C230.315 90.4814 230.103 90.6179 229.991 90.8159C230.655 90.9899 231.274 91.3832 231.719 91.913C237.006 92.7238 257.807 96.9329 268.112 105.249C266.217 113.194 260.607 132.645 255.872 133.357C253.517 133.71 238.182 124.973 228.825 119.239L228.857 118.854C228.38 118.854 227.96 118.76 227.595 118.605L227.518 119.525C227.496 119.766 227.614 119.996 227.82 120.122C230.28 121.634 251.561 134.636 255.826 134.636C255.912 134.636 255.993 134.63 256.065 134.62C262.6 133.635 268.768 108.064 269.449 105.153C269.502 104.918 269.422 104.672 269.234 104.516V104.519Z" fill="#070010"/>
+                    <path d="M325.466 196.883L261.936 171.599C261.922 172.051 261.702 172.488 261.375 172.753L324.992 198.069C335.833 202.382 342.347 213.468 340.833 225.009L325.972 319.074L281.742 307.744L293.942 235.528C293.993 235.228 293.824 234.934 293.54 234.824L229.626 210.394L229.132 203.09L228.638 195.786C228.308 196.086 227.893 196.311 227.4 196.429L228.378 210.886C228.394 211.135 228.555 211.352 228.788 211.44L292.594 235.831L280.384 308.108C280.327 308.435 280.534 308.75 280.855 308.833L326.334 320.484C326.385 320.497 326.439 320.503 326.492 320.503C326.616 320.503 326.739 320.468 326.843 320.398C326.993 320.299 327.095 320.141 327.122 319.965L342.095 225.191C343.687 213.056 336.846 201.414 325.461 196.883H325.466Z" fill="#070010"/>
+                    <path d="M259.588 264.38L244.578 218.698L243.332 215.263C243.308 214.91 243.002 214.642 242.654 214.666C242.3 214.688 242.035 214.993 242.056 215.343L243.305 218.858C243.308 218.912 243.318 218.965 243.334 219.016L258.358 264.736C259.61 269.542 260.274 274.497 260.336 279.429L256.735 351.198H212.282L215.645 285.8C215.65 285.701 215.631 285.602 215.591 285.511L193.804 235.572C191.395 227.21 190.889 218.259 192.349 209.632L192.706 205.789C192.274 205.838 191.835 205.808 191.43 205.707L191.082 209.466C189.595 218.246 190.117 227.408 192.588 235.965C192.596 235.992 192.604 236.019 192.615 236.043L214.359 285.883L210.969 351.8C210.961 351.974 211.023 352.145 211.146 352.274C211.266 352.4 211.433 352.472 211.609 352.472H257.346C257.686 352.472 257.967 352.204 257.983 351.864L261.617 279.448C261.555 274.374 260.877 269.314 259.588 264.372V264.38Z" fill="#070010"/>
+                    <path d="M284.684 402.987C284.684 402.987 284.674 402.987 284.668 402.987L222.268 401.381C218.021 401.29 214.334 398.502 213.097 394.445C212.837 393.6 212.695 392.717 212.673 391.82L212.298 375.95L211.226 353.59C211.218 353.416 211.283 353.245 211.403 353.119C211.524 352.994 211.69 352.921 211.864 352.921L249.216 353.066C249.556 353.066 249.838 353.336 249.854 353.676L250.682 372.145L278.789 387.807C281.691 389.425 283.878 392.05 284.944 395.192C285.488 396.808 285.719 398.48 285.63 400.164C285.59 400.94 285.477 401.724 285.301 402.494C285.234 402.783 284.974 402.989 284.676 402.989L284.684 402.987ZM212.537 354.198L213.576 375.902L213.951 391.788C213.97 392.567 214.093 393.335 214.321 394.071C215.396 397.6 218.603 400.024 222.298 400.102L284.167 401.694C284.266 401.162 284.331 400.627 284.357 400.094C284.438 398.571 284.229 397.06 283.736 395.596C282.774 392.754 280.796 390.381 278.17 388.917L249.752 373.081C249.559 372.974 249.436 372.774 249.425 372.551L248.608 354.334L212.537 354.195V354.198Z" fill="#070010"/>
+                    <path d="M284.998 400.126C284.96 400.865 284.853 401.609 284.684 402.347L266.673 401.89C265.188 399.545 264.398 396.736 264.556 393.763C264.776 389.594 266.812 385.949 269.856 383.555L271.37 384.397L278.484 388.36C281.316 389.939 283.355 392.481 284.344 395.395C284.85 396.902 285.084 398.505 284.998 400.129V400.126Z" fill="#070010"/>
+                    <path d="M285.188 403L266.314 402.518L266.132 402.229C264.524 399.69 263.758 396.749 263.916 393.728C264.135 389.54 266.156 385.65 269.459 383.052L269.794 382.789L278.795 387.801C281.697 389.42 283.883 392.045 284.95 395.187C285.493 396.803 285.724 398.475 285.635 400.158C285.595 400.934 285.483 401.718 285.306 402.489L285.188 402.997V403ZM267.035 401.258L284.164 401.694C284.264 401.162 284.328 400.627 284.355 400.094C284.435 398.571 284.226 397.06 283.733 395.596C282.771 392.754 280.794 390.381 278.168 388.917L269.918 384.323C267.099 386.685 265.381 390.116 265.188 393.795C265.049 396.436 265.687 399.01 267.029 401.258H267.035Z" fill="#070010"/>
+                    <path d="M234.01 401.044L222.285 400.742C218.233 400.656 214.836 397.953 213.707 394.258C213.466 393.477 213.332 392.658 213.311 391.804L212.936 375.934C219.621 378.256 233.994 384.221 234.465 397.086C234.522 398.531 234.356 399.848 234.007 401.047L234.01 401.044Z" fill="#070010"/>
+                    <path d="M234.484 401.694L222.268 401.378C218.021 401.287 214.334 398.499 213.097 394.443C212.837 393.597 212.695 392.714 212.673 391.818L212.279 375.024L213.15 375.326C227.172 380.199 234.766 387.716 235.108 397.06C235.165 398.529 235.001 399.928 234.626 401.221L234.49 401.694H234.484ZM213.6 376.844L213.951 391.788C213.97 392.567 214.093 393.335 214.321 394.071C215.396 397.6 218.603 400.024 222.298 400.102L233.522 400.391C233.771 399.364 233.873 398.261 233.83 397.108C233.514 388.526 226.526 381.532 213.6 376.844Z" fill="#070010"/>
+                    <path d="M284.998 400.126C284.96 400.865 284.853 401.609 284.684 402.347L222.284 400.742C218.233 400.656 214.835 397.953 213.707 394.258L284.341 395.395C284.848 396.902 285.081 398.505 284.995 400.129L284.998 400.126Z" fill="#070010"/>
+                    <path d="M284.684 402.987C284.684 402.987 284.673 402.987 284.668 402.987L222.268 401.381C218.021 401.29 214.334 398.502 213.096 394.445C213.037 394.25 213.075 394.039 213.198 393.875C213.322 393.712 213.485 393.616 213.721 393.621L284.355 394.758C284.625 394.764 284.864 394.938 284.952 395.195C285.496 396.811 285.726 398.483 285.638 400.164C285.598 400.94 285.485 401.724 285.308 402.494C285.241 402.783 284.982 402.989 284.684 402.989V402.987ZM214.624 394.911C215.921 397.98 218.9 400.03 222.298 400.102L284.167 401.694C284.266 401.162 284.33 400.627 284.357 400.094C284.43 398.721 284.266 397.354 283.872 396.024L214.626 394.911H214.624Z" fill="#070010"/>
+                    <path d="M254.489 371.371C254.537 371.786 254.401 372.22 254.085 372.541L250.256 376.429C249.706 376.988 248.806 376.996 248.241 376.445C248.002 376.207 247.86 375.907 247.825 375.602C247.777 375.187 247.914 374.754 248.23 374.433L252.059 370.545C252.608 369.985 253.511 369.98 254.074 370.529C254.312 370.767 254.454 371.066 254.489 371.371Z" fill="#070010"/>
+                    <path d="M260.314 375.144C260.363 375.559 260.226 375.993 259.91 376.314L256.081 380.202C255.532 380.761 254.631 380.769 254.066 380.218C253.827 379.98 253.685 379.68 253.651 379.375C253.602 378.96 253.739 378.527 254.055 378.206L257.884 374.318C258.433 373.758 259.336 373.753 259.899 374.301C260.138 374.54 260.277 374.839 260.314 375.144Z" fill="#070010"/>
+                    <path d="M266.14 378.917C266.188 379.332 266.051 379.766 265.735 380.087L261.906 383.975C261.357 384.534 260.456 384.542 259.891 383.991C259.653 383.753 259.511 383.453 259.476 383.148C259.428 382.733 259.564 382.3 259.88 381.979L263.709 378.09C264.259 377.531 265.162 377.526 265.724 378.074C265.963 378.313 266.105 378.612 266.14 378.917Z" fill="#070010"/>
+                    <path d="M205.999 351.602L205.752 355.835C205.616 358.177 207.405 360.178 209.753 360.315L256.234 363.015C258.578 363.151 260.59 361.369 260.727 359.028L260.974 354.795C261.11 352.45 259.32 350.444 256.976 350.307L210.495 347.607C208.15 347.471 206.138 349.258 206.001 351.602H205.999Z" fill="#070010"/>
+                    <path d="M256.486 363.662C256.389 363.662 256.293 363.66 256.193 363.654L209.715 360.954C208.41 360.879 207.213 360.301 206.344 359.33C205.476 358.356 205.039 357.104 205.114 355.801L205.361 351.567C205.436 350.264 206.015 349.068 206.99 348.201C207.965 347.334 209.227 346.898 210.527 346.973L257.008 349.673C258.313 349.748 259.511 350.326 260.379 351.303C261.247 352.279 261.684 353.532 261.609 354.835L261.362 359.068C261.287 360.371 260.708 361.564 259.73 362.431C258.827 363.231 257.683 363.665 256.486 363.665V363.662ZM210.24 348.239C209.353 348.239 208.509 348.56 207.842 349.151C207.121 349.793 206.693 350.674 206.636 351.637L206.39 355.87C206.334 356.831 206.655 357.757 207.298 358.476C207.939 359.194 208.823 359.622 209.787 359.678L256.266 362.378C257.233 362.434 258.158 362.113 258.878 361.473C259.599 360.834 260.025 359.954 260.081 358.99L260.328 354.757C260.384 353.794 260.063 352.868 259.42 352.148C258.779 351.428 257.895 351 256.93 350.944L210.449 348.244C210.377 348.239 210.305 348.239 210.235 348.239H210.24Z" fill="#070010"/>
+                    <path d="M236.357 91.4769C228.68 89.387 218.635 90.0319 214.265 91.1263C206.419 93.0877 192.132 99.3038 185.514 106.226C186.24 105.876 187.012 105.627 187.805 105.504C188.295 105.076 188.834 104.701 189.41 104.391C196.478 98.8034 207.901 94.0323 214.576 92.3626C218.817 91.3029 228.565 90.6795 236.022 92.7078C236.36 92.7987 236.713 92.6007 236.807 92.2582C236.901 91.9184 236.7 91.5679 236.357 91.4742V91.4769Z" fill="#070010"/>
+                    <path d="M263.222 168.531C263.026 168.657 262.809 168.75 262.584 168.82C260.113 175.897 235.02 193.497 212.992 201.543C200.792 206.001 191.805 206.707 186.982 203.593C186.923 203.408 186.897 203.073 186.894 202.616C186.556 202.881 186.146 203.076 185.661 203.17C185.726 204.018 185.9 204.409 186.17 204.588C188.512 206.148 191.551 206.763 194.898 206.763C200.849 206.763 207.767 204.813 213.429 202.744C234.685 194.976 261.563 176.973 263.886 168.948C263.964 168.683 263.948 168.386 263.838 168.03C263.658 168.212 263.455 168.381 263.222 168.533V168.531Z" fill="#070010"/>
+                    <path d="M244.913 150.281C244.878 150.281 244.843 150.279 244.808 150.271C244.476 150.204 244.254 149.845 244.31 149.465C244.511 148.135 246.37 136.421 249.243 134.355C249.725 134.01 250.242 133.911 250.741 134.068C254.251 135.195 254.763 143.763 254.808 144.737C254.827 145.12 254.57 145.449 254.232 145.47C253.897 145.489 253.608 145.197 253.589 144.815C253.474 142.447 252.678 136.14 250.411 135.412C250.301 135.377 250.143 135.358 249.897 135.535C247.85 137.007 246.038 146.265 245.516 149.706C245.462 150.046 245.205 150.284 244.913 150.284V150.281Z" fill="#070010"/>
+                    <path d="M324.973 171.771H248.94C248.761 171.771 248.589 171.696 248.469 171.563C248.348 171.431 248.286 171.252 248.305 171.073L255.486 91.731C255.516 91.4019 255.792 91.1504 256.124 91.1504H332.157C332.336 91.1504 332.508 91.2253 332.628 91.3591C332.749 91.4902 332.811 91.6695 332.792 91.8488L325.611 171.191C325.581 171.52 325.305 171.771 324.973 171.771ZM249.639 170.492H324.386L331.452 92.4294H256.703L249.637 170.492H249.639Z" fill="#070010"/>
+                    <path d="M268.744 161.571H258.503L261.244 134.906H271.483L268.744 161.571Z" fill="#05DDBE"/>
+                    <path d="M285.432 161.571H275.194L279.325 121.355H289.564L285.432 161.571Z" fill="#05DDBE"/>
+                    <path d="M302.122 161.571H291.884L294.625 134.906H304.863L302.122 161.571Z" fill="#05DDBE"/>
+                    <path d="M318.813 161.571H308.575L312.706 121.355H322.945L318.813 161.571Z" fill="#05DDBE"/>
+                    <path d="M264.993 129.238C264.816 129.238 264.637 129.164 264.511 129.019C264.277 128.754 264.304 128.35 264.572 128.117L285.094 110.221C285.346 110.004 285.721 110.012 285.96 110.243L300.488 124.275L320.295 105.094C320.549 104.848 320.954 104.853 321.2 105.108C321.447 105.362 321.442 105.766 321.187 106.012L300.935 125.623C300.686 125.864 300.295 125.864 300.046 125.623L285.496 111.57L265.416 129.078C265.296 129.185 265.146 129.236 264.996 129.236L264.993 129.238Z" fill="#070010"/>
+                    <path d="M321.374 108.553C322.886 108.196 323.822 106.683 323.465 105.173C323.108 103.663 321.592 102.728 320.08 103.084C318.568 103.441 317.632 104.954 317.989 106.465C318.346 107.975 319.861 108.91 321.374 108.553Z" fill="#070010"/>
+                    <path d="M300.692 127.478C302.245 127.478 303.505 126.22 303.505 124.668C303.505 123.116 302.245 121.859 300.692 121.859C299.138 121.859 297.878 123.116 297.878 124.668C297.878 126.22 299.138 127.478 300.692 127.478Z" fill="#070010"/>
+                    <path d="M286.359 113.297C287.871 112.94 288.808 111.427 288.45 109.917C288.093 108.407 286.578 107.472 285.066 107.828C283.553 108.185 282.617 109.698 282.974 111.209C283.331 112.719 284.847 113.654 286.359 113.297Z" fill="#070010"/>
+                    <path d="M265.17 130.864C266.682 130.507 267.618 128.994 267.261 127.484C266.904 125.974 265.388 125.039 263.876 125.395C262.364 125.752 261.428 127.265 261.785 128.776C262.142 130.286 263.657 131.221 265.17 130.864Z" fill="#070010"/>
+                    <path d="M245.553 149.535C245.411 149.211 245.036 149.064 244.712 149.206L192.223 172.044L195.037 155.853C194.745 155.941 194.423 155.992 194.067 155.992C193.946 155.992 193.831 155.986 193.718 155.976L190.76 172.994C190.72 173.224 190.811 173.46 190.996 173.607C191.181 173.751 191.43 173.784 191.647 173.69L245.223 150.378C245.548 150.236 245.695 149.861 245.553 149.538V149.535Z" fill="#070010"/>
+                    <path d="M276.509 158.783C275.909 157.902 274.802 157.477 273.806 157.271C274.971 156.415 276.177 155.154 276.212 153.594C276.22 153.11 276.035 152.668 275.676 152.318C275.049 151.708 273.905 151.36 272.195 151.266C273.594 150.164 275.132 148.441 274.676 146.509C274.505 145.791 274.074 145.227 273.428 144.884C272.16 144.207 270.215 144.456 268.621 144.855C268.798 144.504 268.929 144.114 268.972 143.696C269.052 142.885 268.792 142.134 268.195 141.465C265.052 137.911 252.07 145.109 249.5 146.589C249.195 146.765 249.087 147.156 249.264 147.461C249.441 147.766 249.83 147.871 250.138 147.697C255.741 144.472 265.336 140.161 267.238 142.313C267.595 142.712 267.745 143.124 267.702 143.568C267.595 144.644 266.418 145.577 266.408 145.585C266.153 145.775 266.102 146.115 266.252 146.394C266.405 146.672 266.761 146.79 267.059 146.677C269.063 145.936 271.633 145.374 272.828 146.011C273.155 146.185 273.347 146.439 273.433 146.803C273.929 148.917 270.371 151.055 269.808 151.306C269.535 151.405 269.36 151.681 269.39 151.973C269.422 152.286 269.677 152.527 269.99 152.543C270.014 152.543 270.092 152.543 270.218 152.537C273.556 152.401 274.524 152.976 274.784 153.23C274.891 153.335 274.936 153.439 274.934 153.567C274.904 154.954 273.187 156.318 271.55 157.156C271.287 157.292 271.153 157.592 271.228 157.878C271.303 158.165 271.568 158.365 271.858 158.36C272.846 158.344 274.816 158.563 275.456 159.5C275.756 159.939 275.746 160.53 275.427 161.306C274.049 164.624 261.657 168.675 256.997 169.957C256.96 169.968 256.922 169.981 256.885 170L243.632 176.489L187.615 201.778C180.265 205.153 171.506 203.566 165.814 197.834C162.2 194.198 160.206 189.368 160.206 184.235C160.206 182.721 160.383 181.209 160.737 179.743L167.754 150.463C167.288 150.394 166.886 150.233 166.549 150.003L159.491 179.446C159.116 181.011 158.926 182.622 158.926 184.235C158.926 189.708 161.048 194.856 164.903 198.733C168.848 202.704 174.172 204.81 179.568 204.81C182.476 204.81 185.404 204.2 188.145 202.94L244.176 177.645L257.391 171.172C259.425 170.61 274.76 166.243 276.606 161.793C277.096 160.605 277.064 159.591 276.512 158.78L276.509 158.783Z" fill="#070010"/>
+                    <path d="M194.447 156.845C186.698 156.845 168.277 152.716 163.676 150.314C162.886 149.901 161.993 149.324 162.101 148.497C162.61 144.566 167.51 128.746 173.017 119.504C178.612 110.114 188.274 103.639 188.684 103.368C188.978 103.173 189.375 103.253 189.571 103.548C189.766 103.842 189.686 104.238 189.391 104.433C189.292 104.498 179.557 111.024 174.115 120.159C168.727 129.204 163.933 144.598 163.381 148.582C164.078 149.639 171.846 152.109 182.119 154.033C191.84 155.853 196.302 155.778 196.832 155.301C198.491 153.803 200.76 137.978 201.312 126.809C201.328 126.456 201.626 126.185 201.982 126.201C202.336 126.22 202.606 126.517 202.59 126.87C202.223 134.304 200.23 153.955 197.692 156.249C197.231 156.666 196.076 156.845 194.453 156.845H194.447Z" fill="#070010"/>
+                    <path d="M346.471 369.472C346.428 369.472 346.385 369.466 346.339 369.458L285.239 356.71C281.075 355.86 277.948 352.459 277.46 348.244C277.356 347.366 277.375 346.473 277.514 345.587L279.995 329.906L282.953 307.718C282.978 307.544 283.071 307.389 283.211 307.285C283.353 307.183 283.532 307.143 283.704 307.175L320.426 314.001C320.761 314.063 320.989 314.378 320.943 314.716L318.446 333.034L343.287 353.473C345.852 355.584 347.532 358.557 348.017 361.84C348.26 363.529 348.188 365.214 347.8 366.855C347.62 367.612 347.371 368.364 347.057 369.089C346.956 369.327 346.722 369.474 346.471 369.474V369.472ZM284.135 308.55L281.263 330.088L278.779 345.785C278.658 346.556 278.642 347.332 278.733 348.097C279.157 351.763 281.876 354.72 285.499 355.461L346.079 368.102C346.272 367.596 346.433 367.079 346.556 366.56C346.907 365.078 346.974 363.553 346.752 362.025C346.312 359.055 344.796 356.368 342.475 354.457L317.358 333.792C317.186 333.65 317.101 333.433 317.13 333.214L319.595 315.146L284.135 308.553V308.55Z" fill="#070010"/>
+                    <path d="M347.178 366.705C347.006 367.425 346.771 368.139 346.47 368.832L328.834 365.158C327.794 362.587 327.521 359.683 328.21 356.785C329.174 352.723 331.83 349.502 335.257 347.693L336.597 348.793L342.883 353.962C345.385 356.023 346.937 358.889 347.384 361.931C347.612 363.502 347.553 365.123 347.178 366.705Z" fill="#070010"/>
+                    <path d="M346.851 369.565L328.368 365.715L328.239 365.399C327.114 362.611 326.886 359.582 327.585 356.641C328.553 352.56 331.238 349.095 334.954 347.131L335.332 346.933L343.287 353.475C345.852 355.589 347.532 358.559 348.017 361.845C348.26 363.534 348.188 365.22 347.8 366.86C347.62 367.62 347.371 368.369 347.057 369.094L346.851 369.573V369.565ZM329.306 364.604L346.079 368.099C346.272 367.593 346.433 367.077 346.556 366.558C346.907 365.075 346.974 363.55 346.752 362.022C346.312 359.052 344.796 356.365 342.475 354.455L335.185 348.458C331.985 350.28 329.681 353.344 328.831 356.93C328.221 359.504 328.384 362.148 329.306 364.602V364.604Z" fill="#070010"/>
+                    <path d="M296.852 358.482L285.37 356.084C281.402 355.273 278.54 352.009 278.098 348.172C278.002 347.358 278.015 346.529 278.149 345.686L280.63 330.005C286.791 333.489 299.861 341.929 298.015 354.669C297.809 356.1 297.412 357.366 296.852 358.482Z" fill="#070010"/>
+                    <path d="M297.203 359.207L285.239 356.71C281.075 355.859 277.948 352.458 277.46 348.244C277.356 347.366 277.375 346.473 277.514 345.587L280.14 328.994L280.941 329.449C293.862 336.754 299.984 345.504 298.644 354.76C298.435 356.215 298.025 357.564 297.423 358.768L297.203 359.207ZM281.115 331.02L278.779 345.785C278.658 346.556 278.642 347.332 278.733 348.097C279.157 351.763 281.876 354.72 285.499 355.461L296.487 357.754C296.916 356.788 297.216 355.72 297.38 354.578C298.61 346.077 292.988 337.945 281.115 331.022V331.02Z" fill="#070010"/>
+                    <path d="M347.178 366.705C347.006 367.425 346.771 368.139 346.471 368.832L285.37 356.084C281.402 355.273 278.54 352.009 278.098 348.172L347.384 361.934C347.612 363.504 347.553 365.126 347.178 366.707V366.705Z" fill="#070010"/>
+                    <path d="M346.471 369.472C346.428 369.472 346.385 369.466 346.339 369.458L285.239 356.71C281.075 355.859 277.948 352.458 277.46 348.244C277.436 348.041 277.511 347.84 277.661 347.701C277.812 347.562 278.015 347.505 278.219 347.543L347.505 361.305C347.77 361.358 347.974 361.572 348.014 361.84C348.258 363.526 348.185 365.214 347.797 366.852C347.617 367.609 347.368 368.361 347.055 369.086C346.953 369.324 346.72 369.472 346.468 369.472H346.471ZM278.883 348.977C279.607 352.228 282.174 354.778 285.502 355.458L346.082 368.099C346.275 367.593 346.436 367.077 346.559 366.558C346.875 365.22 346.961 363.844 346.811 362.466L278.883 348.975V348.977Z" fill="#070010"/>
+                    <path d="M322.326 332.954C322.299 333.372 322.087 333.773 321.72 334.033L317.256 337.171C316.616 337.624 315.726 337.471 315.271 336.826C315.078 336.551 314.995 336.23 315.013 335.922C315.04 335.504 315.252 335.103 315.619 334.843L320.083 331.705C320.723 331.252 321.61 331.41 322.068 332.05C322.261 332.325 322.344 332.647 322.326 332.954Z" fill="#070010"/>
+                    <path d="M327.379 337.709C327.352 338.127 327.141 338.528 326.774 338.788L322.31 341.926C321.669 342.379 320.78 342.226 320.324 341.581C320.131 341.306 320.048 340.985 320.067 340.677C320.094 340.259 320.305 339.858 320.672 339.598L325.136 336.46C325.777 336.007 326.664 336.165 327.122 336.805C327.315 337.08 327.398 337.402 327.379 337.709Z" fill="#070010"/>
+                    <path d="M332.433 342.461C332.406 342.879 332.194 343.28 331.827 343.54L327.363 346.679C326.723 347.131 325.833 346.978 325.378 346.333C325.185 346.058 325.102 345.737 325.121 345.429C325.147 345.012 325.359 344.61 325.726 344.351L330.19 341.212C330.83 340.76 331.717 340.917 332.176 341.557C332.368 341.833 332.452 342.154 332.433 342.461Z" fill="#070010"/>
+                    <path d="M278.168 304.826L277.166 308.946C276.611 311.226 278.012 313.517 280.295 314.071L325.538 325.047C327.821 325.601 330.12 324.209 330.675 321.93L331.677 317.809C332.232 315.529 330.83 313.233 328.547 312.679L283.304 301.703C281.021 301.149 278.722 302.548 278.168 304.828V304.826Z" fill="#070010"/>
+                    <path d="M326.546 325.804C326.163 325.804 325.777 325.759 325.388 325.665L280.145 314.689C277.525 314.052 275.909 311.408 276.544 308.794L277.546 304.673C277.854 303.405 278.639 302.332 279.754 301.652C280.869 300.972 282.184 300.769 283.454 301.077L328.698 312.053C331.318 312.69 332.934 315.336 332.296 317.953L331.294 322.074C330.753 324.303 328.746 325.802 326.543 325.802L326.546 325.804ZM282.294 302.217C281.641 302.217 280.995 302.396 280.421 302.744C279.599 303.244 279.017 304.036 278.79 304.975L277.787 309.096C277.318 311.026 278.511 312.979 280.448 313.45L325.691 324.426C327.623 324.894 329.584 323.709 330.053 321.777L331.056 317.656C331.527 315.722 330.332 313.768 328.397 313.297L283.154 302.321C282.87 302.251 282.581 302.217 282.294 302.217Z" fill="#070010"/>
+                    <path d="M259.406 150.921C259.184 150.921 258.967 150.806 258.849 150.597C258.675 150.289 258.782 149.901 259.09 149.727L266.467 145.55C266.772 145.377 267.163 145.484 267.337 145.791C267.512 146.099 267.404 146.487 267.096 146.661L259.72 150.838C259.62 150.894 259.511 150.921 259.406 150.921Z" fill="#070010"/>
+                    <path d="M263.053 155.764C262.812 155.764 262.579 155.628 262.472 155.392C262.324 155.071 262.464 154.694 262.785 154.544L269.762 151.33C270.084 151.183 270.462 151.322 270.612 151.643C270.759 151.965 270.62 152.342 270.298 152.492L263.321 155.705C263.235 155.746 263.144 155.764 263.053 155.764Z" fill="#070010"/>
+                    <path d="M266.802 160.356C266.547 160.356 266.306 160.203 266.207 159.952C266.078 159.625 266.236 159.253 266.566 159.122L271.593 157.134C271.917 157.006 272.292 157.164 272.423 157.493C272.552 157.819 272.394 158.191 272.064 158.322L267.037 160.31C266.96 160.34 266.879 160.356 266.802 160.356Z" fill="#070010"/>
+                    <path d="M494.434 149.013H345.613C343.85 149.013 342.216 148.325 341.013 147.078C339.809 145.832 339.185 144.175 339.255 142.414L343.245 38.8856C343.384 35.2705 346.441 32.3297 350.061 32.3297H498.88C500.64 32.3297 502.272 33.0174 503.472 34.2617C504.675 35.5113 505.3 37.1703 505.233 38.9337L501.243 142.463C501.104 146.075 498.049 149.01 494.432 149.01L494.434 149.013ZM350.061 33.6061C347.119 33.6061 344.635 35.9956 344.52 38.9337L340.53 142.463C340.477 143.873 340.975 145.197 341.932 146.19C342.891 147.185 344.196 147.734 345.61 147.734H494.432C497.368 147.734 499.852 145.347 499.965 142.412L503.955 38.8829C504.008 37.47 503.51 36.1428 502.55 35.1474C501.594 34.1546 500.289 33.6061 498.88 33.6061H350.061Z" fill="#070010"/>
+                    <path d="M489.049 53.0409C489.049 53.0409 462.527 89.3362 439.569 98.3672L424.074 74.5414C424.074 74.5414 403.233 93.8504 392.515 98.2013C392.515 98.2013 380.926 94.6879 376.727 90.6741L358.922 105.06L357.647 138.176H485.769L489.051 53.0436L489.049 53.0409Z" fill="#05DDBE"/>
+                    <path d="M485.766 138.813H357.641C357.467 138.813 357.301 138.743 357.18 138.617C357.06 138.492 356.996 138.323 357.004 138.149L358.279 105.033C358.287 104.848 358.373 104.677 358.515 104.562L376.32 90.1764C376.569 89.973 376.931 89.9891 377.164 90.2112C380.897 93.7781 390.88 97.0186 392.48 97.5216C403.032 93.1011 423.428 74.2631 423.634 74.0731C423.771 73.9446 423.961 73.8858 424.149 73.9072C424.336 73.9313 424.502 74.0356 424.607 74.1935L439.816 97.5778C462.23 88.4023 488.266 53.0221 488.529 52.6636C488.695 52.4361 488.992 52.3451 489.255 52.4361C489.52 52.5271 489.694 52.784 489.684 53.0649L486.401 138.197C486.388 138.54 486.106 138.813 485.763 138.813H485.766ZM358.309 137.534H485.152L488.33 55.0531C482.819 62.2538 459.864 91.0674 439.802 98.9612C439.521 99.0709 439.197 98.9692 439.031 98.715L423.948 75.5234C420.491 78.6863 402.603 94.7949 392.751 98.7926C392.614 98.8488 392.467 98.8542 392.325 98.8114C391.861 98.6695 381.234 95.4184 376.698 91.5143L359.544 105.373L358.303 137.536L358.309 137.534Z" fill="#070010"/>
+                    <path d="M470.865 138.813C470.865 138.813 470.849 138.813 470.841 138.813C470.488 138.799 470.214 138.502 470.228 138.149L472.787 71.7424C472.8 71.3972 473.084 71.1296 473.424 71.1296C473.432 71.1296 473.44 71.1296 473.448 71.1296C473.802 71.143 474.075 71.44 474.062 71.7932L471.503 138.2C471.49 138.545 471.206 138.813 470.865 138.813Z" fill="#070010"/>
+                    <path d="M454.446 138.813C454.446 138.813 454.43 138.813 454.422 138.813C454.068 138.799 453.795 138.502 453.808 138.149L455.743 87.9314C455.756 87.5862 456.04 87.3186 456.38 87.3186C456.388 87.3186 456.396 87.3186 456.404 87.3186C456.758 87.332 457.032 87.629 457.018 87.9822L455.084 138.2C455.07 138.545 454.786 138.813 454.446 138.813Z" fill="#070010"/>
+                    <path d="M438.034 138.813C438.034 138.813 438.018 138.813 438.01 138.813C437.656 138.799 437.383 138.502 437.396 138.149L438.932 98.3404C438.945 97.9872 439.277 97.7143 439.596 97.7276C439.95 97.741 440.223 98.038 440.21 98.3913L438.674 138.2C438.661 138.545 438.377 138.815 438.037 138.815L438.034 138.813Z" fill="#070010"/>
+                    <path d="M421.622 138.813C421.622 138.813 421.606 138.813 421.598 138.813C421.244 138.799 420.971 138.502 420.984 138.149L423.439 74.5146C423.452 74.1694 423.736 73.9019 424.076 73.9019C424.085 73.9019 424.093 73.9019 424.101 73.9019C424.454 73.9152 424.728 74.2123 424.714 74.5655L422.26 138.2C422.246 138.545 421.962 138.813 421.622 138.813Z" fill="#070010"/>
+                    <path d="M405.208 138.813C405.208 138.813 405.191 138.813 405.183 138.813C404.83 138.799 404.556 138.502 404.57 138.149L406.472 88.7876C406.486 88.4424 406.77 88.1748 407.11 88.1748C407.118 88.1748 407.126 88.1748 407.134 88.1748C407.488 88.1882 407.761 88.4852 407.748 88.8384L405.845 138.2C405.832 138.545 405.548 138.813 405.208 138.813Z" fill="#070010"/>
+                    <path d="M388.796 138.813C388.796 138.813 388.78 138.813 388.772 138.813C388.418 138.799 388.145 138.502 388.158 138.149L389.725 97.4681C389.739 97.1229 390.023 96.8553 390.363 96.8553C390.371 96.8553 390.379 96.8553 390.387 96.8553C390.741 96.8687 391.014 97.1657 391.001 97.519L389.433 138.2C389.42 138.545 389.136 138.813 388.796 138.813Z" fill="#070010"/>
+                    <path d="M372.384 138.813C372.384 138.813 372.368 138.813 372.36 138.813C372.006 138.799 371.733 138.502 371.746 138.149L373.496 92.7398C373.509 92.3866 373.836 92.1137 374.158 92.1271C374.511 92.1404 374.785 92.4375 374.771 92.7907L373.022 138.2C373.008 138.545 372.724 138.815 372.384 138.815V138.813Z" fill="#070010"/>
+                    <path d="M409.733 55.5481H354.464L354.812 46.5171H410.082L409.733 55.5481Z" fill="#E9E9E9"/>
+                    <path d="M387.07 61.2369L386.853 66.9231H404.104L404.321 61.2369H387.07Z" fill="#070010"/>
+                    <path d="M380.205 61.2369H354.244L354.027 66.9231H379.986L380.205 61.2369Z" fill="#05DDBE"/>
+                    <path d="M430.888 81.3501C434.654 77.5892 434.654 71.4916 430.888 67.7307C427.122 63.9698 421.016 63.9698 417.25 67.7307C413.484 71.4916 413.484 77.5892 417.25 81.3501C421.016 85.111 427.122 85.111 430.888 81.3501Z" fill="white"/>
+                    <path d="M424.074 84.8087C418.404 84.8087 413.79 80.2008 413.79 74.5387C413.79 68.8766 418.404 64.2688 424.074 64.2688C429.744 64.2688 434.358 68.8766 434.358 74.5387C434.358 80.2008 429.744 84.8087 424.074 84.8087ZM424.074 65.5479C419.109 65.5479 415.068 69.5831 415.068 74.5414C415.068 79.4998 419.109 83.535 424.074 83.535C429.039 83.535 433.077 79.4998 433.077 74.5414C433.077 69.5831 429.039 65.5479 424.074 65.5479Z" fill="#070010"/>
+                    <path d="M427.53 77.9972C429.442 76.088 429.442 72.9926 427.53 71.0834C425.618 69.1742 422.519 69.1742 420.607 71.0834C418.695 72.9926 418.695 76.088 420.607 77.9972C422.519 79.9064 425.618 79.9064 427.53 77.9972Z" fill="white"/>
+                    <path d="M424.074 80.0669C421.022 80.0669 418.538 77.5864 418.538 74.5386C418.538 71.4908 421.022 69.0103 424.074 69.0103C427.126 69.0103 429.607 71.4908 429.607 74.5386C429.607 77.5864 427.126 80.0669 424.074 80.0669ZM424.074 70.2893C421.726 70.2893 419.819 72.1945 419.819 74.5386C419.819 76.8826 421.726 78.7878 424.074 78.7878C426.421 78.7878 428.329 76.8826 428.329 74.5386C428.329 72.1945 426.418 70.2893 424.074 70.2893Z" fill="#070010"/>
+                    <path d="M188.437 80.0322C200.462 80.0322 210.211 70.2971 210.211 58.2882C210.211 46.2793 200.462 36.5442 188.437 36.5442C176.412 36.5442 166.664 46.2793 166.664 58.2882C166.664 70.2971 176.412 80.0322 188.437 80.0322Z" fill="#070010"/>
+                    <path d="M188.437 80.6691C176.08 80.6691 166.026 70.6293 166.026 58.2882C166.026 45.9472 176.08 35.9073 188.437 35.9073C200.795 35.9073 210.849 45.9472 210.849 58.2882C210.849 70.6293 200.795 80.6691 188.437 80.6691ZM188.437 37.1837C176.784 37.1837 167.304 46.6509 167.304 58.2882C167.304 69.9255 176.784 79.3927 188.437 79.3927C200.09 79.3927 209.57 69.9255 209.57 58.2882C209.57 46.6509 200.09 37.1837 188.437 37.1837Z" fill="#070010"/>
+                    <path d="M224.498 93.8716L223.064 85.8307C222.66 85.9698 222.244 86.0769 221.821 86.1491L223.247 94.1366L223.265 94.2142C223.284 94.2703 224.988 99.8442 223.238 102.723C222.711 103.59 221.928 104.107 220.851 104.299C213.777 105.568 205.184 97.7998 204.002 96.692L199.664 76.3287C199.257 76.4545 198.839 76.5482 198.416 76.6043L202.794 97.1496L202.834 97.3369L202.971 97.4707C203.341 97.8319 211.484 105.712 219.222 105.712C219.844 105.712 220.465 105.661 221.076 105.552C222.518 105.292 223.614 104.562 224.332 103.379C226.317 100.112 224.675 94.4496 224.498 93.869V93.8716Z" fill="#070010"/>
+                    <path d="M222.772 86.4435C218.967 86.4435 214.736 85.6514 210.664 84.1021L211.119 82.9087C217.705 85.416 224.953 85.8575 229.583 84.0379C232.684 82.8204 235.092 80.2997 236.553 76.7515C239.163 70.4124 238.57 61.1647 235.044 53.1906C232.456 47.3359 228.083 42.7521 222.724 40.2823C217.37 37.8125 211.564 37.7135 206.379 39.9987C201.173 42.2946 197.274 46.7124 195.401 52.4387C193.518 58.1891 193.903 64.5711 196.481 70.4017C197.17 71.9618 198.11 73.4603 199.276 74.8597L198.292 75.6759C197.049 74.1854 196.047 72.5852 195.31 70.9155C192.604 64.7931 192.205 58.0901 194.185 52.04C196.173 45.9632 200.321 41.2724 205.862 38.8293C211.39 36.3916 217.569 36.496 223.26 39.121C228.9 41.7219 233.501 46.5358 236.212 52.6742C239.926 61.0791 240.51 70.4901 237.734 77.2359C236.14 81.1132 233.482 83.8747 230.05 85.2233C227.976 86.0394 225.478 86.4408 222.769 86.4408L222.772 86.4435Z" fill="#070010"/>
+                    <path d="M197.389 37.4914C174.633 31.7169 174.769 71.7691 198.775 75.2798L195.131 66.4709L203.26 64.0626C203.26 64.0626 204.943 61.4724 204.289 58.6333C203.635 55.7942 201.433 53.8221 201.433 53.8221" fill="#070010"/>
+                    <path d="M199.796 76.0745L198.684 75.9113C190.648 74.7366 184.367 69.3903 181.446 61.245C178.641 53.4181 179.681 44.9463 184.035 40.1646C186.302 37.6733 190.49 35.0804 197.547 36.8706L197.231 38.1095C192.132 36.8144 187.896 37.8232 184.981 41.0235C180.999 45.3959 180.04 53.5331 182.65 60.8141C185.265 68.1139 190.728 73.0294 197.74 74.453L194.27 66.0615L202.837 63.5221C203.18 62.904 204.155 60.8917 203.667 58.7778C203.065 56.1662 201.028 54.3172 201.007 54.2984L201.861 53.3485C201.958 53.4341 204.222 55.4919 204.913 58.4915C205.621 61.5607 203.871 64.2954 203.796 64.4105L203.667 64.6085L195.993 66.883L199.796 76.0745Z" fill="#070010"/>
+                    <path d="M221.322 65.8507C222.233 65.5592 222.648 64.3178 222.25 63.078C221.852 61.8383 220.791 61.0695 219.881 61.3611C218.97 61.6526 218.555 62.894 218.953 64.1337C219.351 65.3735 220.412 66.1422 221.322 65.8507Z" fill="#070010"/>
+                    <path d="M226.446 70.9958C226.132 70.9958 225.859 70.7657 225.813 70.4499C225.762 70.1021 226.004 69.7756 226.355 69.7274C226.371 69.7248 228.287 69.4224 229.549 67.9159C229.723 67.7099 228.817 66.5137 228.22 65.7244C227.075 64.2098 225.505 62.136 224.326 59.2408C224.192 58.9143 224.35 58.5424 224.677 58.4086C225.004 58.2775 225.377 58.4327 225.511 58.7591C226.625 61.4992 228.136 63.4981 229.238 64.9564C230.465 66.5806 231.352 67.7527 230.527 68.7374C228.943 70.6265 226.633 70.9798 226.534 70.9931C226.505 70.9985 226.473 70.9985 226.443 70.9985L226.446 70.9958Z" fill="#070010"/>
+                    <path d="M221.162 59.4014C221.162 59.4014 218.528 59.3933 217.483 61.7374L221.162 59.4014Z" fill="white"/>
+                    <path d="M217.483 62.3742C217.397 62.3742 217.309 62.3555 217.223 62.318C216.901 62.1735 216.754 61.7963 216.899 61.4752C218.091 58.7966 221.006 58.7592 221.162 58.7592C221.515 58.7592 221.8 59.0481 221.8 59.3987C221.8 59.7519 221.513 60.0355 221.162 60.0355C221.068 60.0355 218.924 60.073 218.067 61.9943C217.96 62.2324 217.727 62.3742 217.483 62.3742Z" fill="#070010"/>
+                    <path d="M229.385 58.8555C229.814 60.1881 230.953 61.0149 231.931 60.7018C232.909 60.3888 233.353 59.0535 232.925 57.7209C232.496 56.3883 231.357 55.5615 230.379 55.8746C229.401 56.1877 228.956 57.5229 229.385 58.8555Z" fill="#070010"/>
+                    <path d="M231.88 54.2369C231.88 54.2369 229.246 54.2289 228.201 56.573L231.88 54.2369Z" fill="white"/>
+                    <path d="M228.201 57.2125C228.115 57.2125 228.027 57.1938 227.941 57.1563C227.619 57.0118 227.475 56.6345 227.617 56.3134C228.815 53.6242 231.762 53.6028 231.88 53.5974C232.234 53.5974 232.518 53.8864 232.518 54.2369C232.518 54.5902 232.231 54.8738 231.877 54.8738C231.77 54.8738 229.637 54.9166 228.782 56.8325C228.678 57.0707 228.442 57.2125 228.198 57.2125H228.201Z" fill="#070010"/>
+                    <path d="M224.27 78.3223C221.515 78.3223 219.407 76.1495 218.579 74.7821C218.397 74.4797 218.493 74.0891 218.793 73.9071C219.096 73.7252 219.487 73.8188 219.672 74.1212C219.768 74.2791 222.07 77.9664 225.564 76.8372C225.902 76.7275 226.261 76.9121 226.368 77.2493C226.478 77.5837 226.293 77.945 225.955 78.0547C225.371 78.2447 224.809 78.3276 224.27 78.3276V78.3223Z" fill="#070010"/>
+                    <path d="M207.901 57.0706C217.758 57.0706 225.749 49.0906 225.749 39.2467C225.749 29.4029 217.758 21.4229 207.901 21.4229C198.044 21.4229 190.053 29.4029 190.053 39.2467C190.053 49.0906 198.044 57.0706 207.901 57.0706Z" fill="#070010"/>
+                    <path d="M207.912 57.7315C197.719 57.7315 189.426 49.4497 189.426 39.2708C189.426 29.0918 197.719 20.8101 207.912 20.8101C218.105 20.8101 226.4 29.0918 226.4 39.2708C226.4 49.4497 218.107 57.7315 207.912 57.7315ZM207.912 22.0838C198.424 22.0838 190.704 29.7929 190.704 39.2681C190.704 48.7433 198.424 56.4525 207.912 56.4525C217.4 56.4525 225.119 48.7433 225.119 39.2681C225.119 29.7929 217.4 22.0838 207.912 22.0838Z" fill="#070010"/>
+                    <path d="M228.198 49.6157C238.135 49.6157 246.191 41.571 246.191 31.6473C246.191 21.7237 238.135 13.679 228.198 13.679C218.261 13.679 210.205 21.7237 210.205 31.6473C210.205 41.571 218.261 49.6157 228.198 49.6157Z" fill="#070010"/>
+                    <path d="M228.201 50.2552C217.928 50.2552 209.568 41.9066 209.568 31.6473C209.568 21.3881 217.928 13.0394 228.201 13.0394C238.474 13.0394 246.834 21.3881 246.834 31.6473C246.834 41.9066 238.474 50.2552 228.201 50.2552ZM228.201 14.3158C218.632 14.3158 210.846 22.0892 210.846 31.6473C210.846 41.2055 218.63 48.9789 228.201 48.9789C237.772 48.9789 245.556 41.2055 245.556 31.6473C245.556 22.0892 237.772 14.3158 228.201 14.3158Z" fill="#070010"/>
+                    <path d="M56.9409 306.281C56.8364 306.281 56.7319 306.255 56.6381 306.204C56.488 306.123 56.3755 305.987 56.3273 305.824L24.1842 197.757C24.1279 197.564 24.1627 197.358 24.2833 197.197C24.4012 197.037 24.5888 196.94 24.7897 196.938L144.675 195.308C144.978 195.305 145.19 195.471 145.283 195.723L173.217 270.417C173.279 270.583 173.271 270.765 173.193 270.922C173.115 271.08 172.973 271.198 172.804 271.249L57.1284 306.252C57.0668 306.271 57.0052 306.279 56.9435 306.279L56.9409 306.281ZM25.6499 198.203L57.3696 304.847L171.778 270.227L144.241 196.59L25.6499 198.201V198.203Z" fill="#070010"/>
+                    <path d="M52.5359 234.873L67.6187 232.778L84.2074 284.422L69.9204 288.998L52.5359 234.873Z" fill="#05DDBE"/>
+                    <path d="M90.6997 262.905L104.604 259.927L110.531 278.385L97.0581 282.699L90.6997 262.905Z" fill="#070010"/>
+                    <path d="M96.6456 283.504L89.8772 262.432L105.035 259.183L111.334 278.797L96.6456 283.504ZM91.5251 263.382L97.4735 281.896L109.727 277.971L104.17 260.674L91.5251 263.382Z" fill="#070010"/>
+                    <path d="M112.13 240.84L126.35 238.85L136.91 271.731L123.438 276.044L112.13 240.84Z" fill="#05DDBE"/>
+                    <path d="M139.809 251.25L152.159 248.825L158.721 265.64L146.063 269.694L139.809 251.25Z" fill="#070010"/>
+                    <path d="M145.659 270.494L138.968 250.763L152.561 248.095L159.563 266.042L145.659 270.497V270.494ZM140.651 251.737L146.471 268.897L157.88 265.242L151.76 249.556L140.651 251.737Z" fill="#070010"/>
+                    <path d="M106.107 239.535L41.6841 204.976L44.1037 200.475L104.255 232.743L116.048 213.375L146.95 230.501L144.469 234.967L117.864 220.226L106.107 239.535Z" fill="#070010"/>
+                    <path d="M63.0609 188.576L40.9954 227.108L11.781 182.793L63.0609 188.576Z" fill="#070010"/>
+                    <path d="M364.096 239.275L364.072 238.63C364.048 237.964 364.034 237.303 364.034 236.629C364.034 233.19 364.367 229.77 365.023 226.466C365.8 222.5 367.046 218.639 368.729 214.994C370.382 211.379 372.472 207.97 374.945 204.861C377.421 201.751 380.237 198.993 383.321 196.654C386.451 194.278 389.838 192.343 393.388 190.904C397.836 189.1 402.509 188.067 407.279 187.834L407.948 187.802V215.35L407.324 215.366C405.312 215.414 403.329 215.794 401.429 216.498C399.889 217.071 398.426 217.852 397.078 218.815L396.909 218.93C395.601 219.87 394.406 220.98 393.356 222.227C392.252 223.517 391.295 224.97 390.51 226.551C389.725 228.138 389.133 229.824 388.753 231.558C388.386 233.171 388.201 234.846 388.201 236.546C388.201 236.749 388.206 236.947 388.211 237.142L388.233 238.068L364.104 239.278L364.096 239.275ZM406.668 189.146C402.276 189.435 397.973 190.422 393.868 192.086C390.422 193.483 387.134 195.362 384.093 197.668C381.095 199.94 378.354 202.626 375.945 205.65C373.539 208.679 371.499 212 369.889 215.521C368.249 219.078 367.035 222.84 366.277 226.707C365.637 229.931 365.313 233.268 365.313 236.623C365.313 237.065 365.318 237.498 365.329 237.932L386.917 236.848C386.917 236.746 386.915 236.642 386.915 236.538C386.915 234.745 387.11 232.973 387.499 231.272C387.903 229.441 388.528 227.659 389.358 225.976C390.194 224.301 391.207 222.76 392.375 221.392C393.536 220.012 394.867 218.791 396.325 217.764L396.488 217.651C397.882 216.675 399.393 215.88 400.979 215.289C402.815 214.612 404.725 214.213 406.665 214.103V189.14L406.668 189.146Z" fill="#070010"/>
+                    <path d="M383.265 277.435C390.998 286.193 401.823 291.955 414.036 292.557C439.486 293.812 461.04 272.284 461.04 244.423C461.04 216.562 439.489 194.877 414.036 195.942V222.364C425.413 222.171 434.818 231.999 434.818 244.324C434.818 256.649 425.413 266.411 414.036 266.133C408.468 265.996 403.471 263.473 399.873 259.52L383.265 277.43V277.435Z" fill="#05DDBE"/>
+                    <path d="M416.158 293.25C415.443 293.25 414.725 293.231 414.004 293.196C402.088 292.607 391.001 287.162 382.785 277.858L382.402 277.425L399.875 258.579L400.344 259.095C403.988 263.095 408.854 265.37 414.052 265.498C419.127 265.624 423.98 263.679 427.726 260.029C431.825 256.031 434.178 250.31 434.178 244.33C434.178 238.349 431.825 232.607 427.723 228.577C423.975 224.898 419.135 222.92 414.047 223.006L413.396 223.016V195.332L414.01 195.305C425.989 194.802 437.493 199.233 446.418 207.777C456.118 217.065 461.68 230.421 461.68 244.423C461.68 258.426 456.12 271.736 446.423 280.954C438.034 288.928 427.359 293.247 416.161 293.247L416.158 293.25ZM384.131 277.443C392.075 286.223 402.683 291.358 414.068 291.92C425.687 292.492 436.871 288.27 445.539 280.028C454.981 271.051 460.399 258.073 460.399 244.423C460.399 230.774 454.981 217.748 445.531 208.701C437.013 200.545 426.081 196.245 414.674 196.56V221.727C419.853 221.807 424.784 223.899 428.618 227.664C432.964 231.932 435.456 238.004 435.456 244.327C435.456 250.65 432.964 256.705 428.618 260.941C424.623 264.835 419.425 266.906 414.02 266.775C408.696 266.646 403.699 264.409 399.875 260.462L384.131 277.446V277.443Z" fill="#070010"/>
+                    <path d="M370.905 246.085C371.36 258.172 375.969 269.186 383.265 277.438L399.872 259.529C396.456 255.785 394.275 250.701 394.053 245.103L370.905 246.088V246.085Z" fill="#070010"/>
+                    <path d="M383.254 278.388L382.785 277.858C375.16 269.231 370.712 257.955 370.267 246.106L370.243 245.472L394.666 244.434L394.693 245.074C394.902 250.35 396.909 255.33 400.347 259.095L400.741 259.529L383.254 278.388ZM371.572 246.695C372.126 257.776 376.266 268.303 383.281 276.48L399.01 259.515C395.746 255.742 393.787 250.902 393.45 245.764L371.574 246.693L371.572 246.695Z" fill="#070010"/>
+                    <path d="M394.245 191.261L393.024 191.64L400.606 216.038L401.826 215.66L394.245 191.261Z" fill="#070010"/>
+                    <path d="M396.349 218.938L396.151 218.625L383.161 197.494L384.251 196.825L397.241 217.956L396.7 218.288L396.719 218.928L396.349 218.938Z" fill="#070010"/>
+                    <path d="M375.897 204.82L375.016 205.744L392.434 222.303L393.315 221.378L375.897 204.82Z" fill="#070010"/>
+                    <path d="M369.576 214.671L368.974 215.797L389.6 226.8L390.202 225.674L369.576 214.671Z" fill="#070010"/>
+                    <path d="M365.796 225.988L365.527 227.236L387.999 232.068L388.268 230.82L365.796 225.988Z" fill="#070010"/>
+                    <path d="M100.331 89.2611C85.4144 89.2611 73.2764 101.38 73.2764 116.279C73.2764 131.178 85.4117 143.297 100.331 143.297C115.25 143.297 127.386 131.178 127.386 116.279C127.386 101.38 115.25 89.2611 100.331 89.2611ZM100.331 133.838C90.6341 133.838 82.7483 125.96 82.7483 116.279C82.7483 106.598 90.6367 98.7203 100.331 98.7203C110.025 98.7203 117.914 106.598 117.914 116.279C117.914 125.96 110.025 133.838 100.331 133.838Z" fill="#070010"/>
+                    <path d="M107.386 91.3724H93.2761L97.0274 80.6368H103.638L107.386 91.3724Z" fill="#070010"/>
+                    <path d="M108.286 92.0119H92.3757L96.5718 80H104.088L108.284 92.0119H108.286ZM94.1763 90.7329H106.486L103.182 81.2764H97.4828L94.179 90.7329H94.1763Z" fill="#070010"/>
+                    <path d="M87.684 93.687L77.7056 103.649L72.7593 93.4114L77.4296 88.7448L87.684 93.687Z" fill="#070010"/>
+                    <path d="M77.5234 104.736L71.9849 93.2777L77.301 87.9688L88.7745 93.4998L77.5234 104.736ZM73.5309 93.5426L77.8905 102.563L86.5934 93.8717L77.5609 89.5181L73.5309 93.5426Z" fill="#070010"/>
+                    <path d="M75.3905 109.236V123.325L64.6404 119.581V112.98L75.3905 109.236Z" fill="#070010"/>
+                    <path d="M76.0282 124.227L64 120.036V112.53L76.0282 108.34V124.229V124.227ZM65.2808 119.126L74.7501 122.426V110.133L65.2808 113.432V119.124V119.126Z" fill="#070010"/>
+                    <path d="M77.7056 128.912L87.684 138.874L77.4296 143.817L72.7593 139.15L77.7056 128.912Z" fill="#070010"/>
+                    <path d="M77.2983 144.59L71.9822 139.281L77.5207 127.823L88.7718 139.059L77.2983 144.59ZM73.5309 139.019L77.5609 143.043L86.5934 138.69L77.8904 129.998L73.5309 139.019Z" fill="#070010"/>
+                    <path d="M93.2761 141.189H107.386L103.638 151.924H97.0274L93.2761 141.189Z" fill="#070010"/>
+                    <path d="M104.09 152.561H96.5745L92.3784 140.549H108.289L104.093 152.561H104.09ZM97.4828 151.285H103.182L106.486 141.828H94.1763L97.4801 151.285H97.4828Z" fill="#070010"/>
+                    <path d="M112.981 138.874L122.957 128.912L127.906 139.15L123.233 143.817L112.981 138.874Z" fill="#070010"/>
+                    <path d="M123.364 144.59L111.89 139.059L123.142 127.823L128.68 139.281L123.367 144.59H123.364ZM114.069 138.692L123.101 143.046L127.131 139.021L122.772 130.001L114.069 138.692Z" fill="#070010"/>
+                    <path d="M125.274 123.325V109.236L136.024 112.98V119.581L125.274 123.325Z" fill="#070010"/>
+                    <path d="M124.634 124.227V108.337L136.662 112.528V120.033L124.634 124.224V124.227ZM125.915 110.135V122.428L135.384 119.129V113.437L125.915 110.138V110.135Z" fill="#070010"/>
+                    <path d="M122.957 103.649L112.981 93.687L123.233 88.7448L127.906 93.4114L122.957 103.649Z" fill="#070010"/>
+                    <path d="M123.142 104.736L111.89 93.4998L123.364 87.9688L128.677 93.2777L123.139 104.736H123.142ZM114.069 93.869L122.772 102.56L127.131 93.5399L123.101 89.5154L114.069 93.869Z" fill="#070010"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_379_12065">
+                    <rect width="528" height="403" fill="white"/>
+                    </clipPath>
+                    </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <div>
+    <div class="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold tracking-tight text-purple-800 sm:text-4xl">
+            Technology Partners
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-base text-gray-600 leading-relaxed">
+            Our Technology partners bring to the table a comprehensive range of talent, GEN AI technology, and
+            customizable development solutions. From leading-edge cloud engineering to data-driven insights our partners
+            provide the tools and expertise needed to thrive. Our tailored services are designed to meet the unique
+            needs of your business, ensuring seamless integration, scalability, and success.
+          </p>
+        </div>
+
+        <div class="mt-16">
+          <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
+            <div class="col-span-1 flex justify-center items-center">
+              <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo">
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+              <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                src="https://wac-cdn.atlassian.com/dam/jcr:616e6748-ad8c-48d9-ae93-e49019ed5259/Atlassian-horizontal-blue-rgb.svg"
+                alt="Atlassian Logo">
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+              <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="GitHub Logo">
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+              <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" alt="OpenAI Logo">
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+              <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure Logo">
+            </div>
+            <div class="col-span-1 flex justify-center items-center">
+              <img class="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                src="https://workspace.google.com/static/img/google-workspace-logo.svg" alt="Google Workspace Logo">
+            </div>
           </div>
         </div>
-      </footer>
-  </body>
-</html> 
+      </div>
+    </div>
+  </div>
+  <div class="bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 py-16 space-y-16">
+      <!-- Board of Directors Section -->
+      <section class="text-center space-y-6">
+        <h2 class="text-4xl font-bold text-purple-800">Board of Directors</h2>
+        <p class="text-gray-600 leading-relaxed">
+          Our Board of Directors is composed of a diverse group of experienced and passionate leaders who bring a wealth
+          of expertise across various industries. Together, they provide strategic guidance, oversight, and invaluable
+          insights to ensure the company's growth, stability, and long-term success. The Board plays a critical role in
+          shaping the company's vision, corporate governance, and decision-making, aligning our goals with the best
+          interests of our stakeholders.
+        </p>
+      </section>
+
+      <!-- Decorative Divider -->
+      <div class="border-t-2 border-gray-200 w-3/4 mx-auto"></div>
+
+      <!-- Management Team Section -->
+      <section class="text-center space-y-6">
+        <h2 class="text-4xl font-bold text-purple-800">Management team</h2>
+        <p class="text-gray-600 leading-relaxed">
+          At Authentz, our success is driven by the expertise, passion, and leadership of our exceptional management
+          team. Each of our leaders brings a wealth of experience, strategic vision, and dedication to ensuring we
+          deliver the highest quality products/services to our customers. The team is focused on innovation and helping
+          our clients become successful and competitive.
+        </p>
+      </section>
+    </div>
+  </div>
+  <div class="bg-gray-50">
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left side - Image -->
+        <div class="order-2 md:order-1">
+          <div class="relative">
+            <div class="rounded-lg overflow-hidden shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Business professionals discussing" class="w-full h-auto object-cover" />
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-purple-600"></div>
+          </div>
+        </div>
+
+        <!-- Right side - Content -->
+        <div class="order-1 md:order-2 space-y-8">
+          <h2 class="text-4xl font-bold text-purple-900 mb-8">Why Do You Need To Choose Us</h2>
+
+          <div class="space-y-6">
+            <!-- Point 1 -->
+            <div class="flex items-start gap-4">
+              <span
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">1</span>
+              <div>
+                <p class="font-semibold text-gray-800">Expertise: Over 100 Years Of Combined Experience In The Higher
+                  Education Sector.</p>
+              </div>
+            </div>
+
+            <!-- Point 2 -->
+            <div class="flex items-start gap-4">
+              <span
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">2</span>
+              <div>
+                <p class="font-semibold text-gray-800">AI-Powered Solutions: Streamline Recruitment, Compliance, And
+                  Admissions With 99% Accuracy And Reduced Costs.</p>
+              </div>
+            </div>
+
+            <!-- Point 3 -->
+            <div class="flex items-start gap-4">
+              <span
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">3</span>
+              <div>
+                <p class="font-semibold text-gray-800">Real-Time Insights: Gain Valuable Data Insights To Optimize
+                  Workflows And Decision-Making.</p>
+              </div>
+            </div>
+
+            <!-- Point 4 -->
+            <div class="flex items-start gap-4">
+              <span
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">4</span>
+              <div>
+                <p class="font-semibold text-gray-800">Customizable Risk Control: Tailor Risk Parameters Based On
+                  Regional Market Needs For Improved Student Recruitment.</p>
+              </div>
+            </div>
+
+            <!-- Point 5 -->
+            <div class="flex items-start gap-4">
+              <span
+                class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-100 text-purple-900 font-semibold">5</span>
+              <div>
+                <p class="font-semibold text-gray-800">Seamless Integration: Our Platform Integrates Effortlessly With
+                  Your Existing Systems For A User-Friendly Experience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="bg-gray-50">
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl font-bold text-purple-800 mb-6">
+            We are located in
+          </h1>
+          <p class="text-gray-600 mb-12 text-sm max-w-3xl mx-auto">
+            Our Board consists of leaders & visionaries from education and other fields who continue to guide mentor and
+            challenge our capabilities to ensure we provide our clients with ground breaking, cost effective and ground
+            breaking solutions continuously.
+          </p>
+
+          <div class="flex flex-row justify-center items-center gap-4 flex-wrap md:flex-nowrap">
+            <!-- India -->
+            <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
+              <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India flag"
+                class="w-6 h-6 rounded-full mr-2">
+              <span class="text-gray-700 text-sm">India</span>
+            </div>
+
+            <!-- UK -->
+            <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
+              <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK flag"
+                class="w-6 h-6 rounded-full mr-2">
+              <span class="text-gray-700 text-sm">UK</span>
+            </div>
+
+            <!-- USA -->
+            <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
+              <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="USA flag"
+                class="w-6 h-6 rounded-full mr-2">
+              <span class="text-gray-700 text-sm">USA</span>
+            </div>
+
+            <!-- Canada -->
+            <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
+                alt="Canada flag" class="w-6 h-6 rounded-full mr-2">
+              <span class="text-gray-700 text-sm">Canada</span>
+            </div>
+
+            <!-- Australia -->
+            <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg"
+                alt="Australia flag" class="w-6 h-6 rounded-full mr-2">
+              <span class="text-gray-700 text-sm">Australia</span>
+            </div>
+
+            <!-- Singapore -->
+            <div class="flex items-center bg-white rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-shadow">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg" alt="Singapore flag"
+                class="w-6 h-6 rounded-full mr-2">
+              <span class="text-gray-700 text-sm">Singapore</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="bg-[#3D087B] text-white">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <!-- Logo -->
+        <div class="mb-6 md:mb-0">
+          <h2 class="text-2xl font-bold">authentz.</h2>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex flex-wrap justify-center gap-6 text-sm mb-6 md:mb-0">
+          <a href="#" class="hover:text-gray-300">Home</a>
+          <a href="#" class="hover:text-gray-300">Product & Services</a>
+          <a href="#" class="hover:text-gray-300">Knock Knock</a>
+          <a href="#" class="hover:text-gray-300">About Us</a>
+          <a href="#" class="hover:text-gray-300">Partners</a>
+          <a href="#" class="hover:text-gray-300">Contact Us</a>
+        </nav>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-white hover:opacity-75" aria-label="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+          <a href="#" class="text-white hover:opacity-75" aria-label="Facebook">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+          <a href="#" class="text-white hover:opacity-75" aria-label="Twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a href="#" class="text-white hover:opacity-75" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+            </svg>
+          </a>
+          <a href="#" class="text-white hover:opacity-75" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center text-sm">
+        <p>Copyright authentz.com©2024. All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

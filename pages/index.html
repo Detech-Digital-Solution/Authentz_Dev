@@ -1,307 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body style="background-color: blueviolet;">
-    <!-- Navigation -->
-    <nav class="container mx-auto px-6 py-4">
-      <div class="flex items-center justify-between">
-        <div class="text-2xl font-bold text-[#00FFD1]">
-          authentz.
-        </div>
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#" class="hover:text-gray-300">Home</a>
-          <a href="#" class="hover:text-gray-300">Product & Services</a>
-          <a href="#" class="hover:text-gray-300">Knock Knock</a>
-          <a href="#" class="hover:text-gray-300">Company</a>
-        </div>
-        <div class="flex items-center space-x-4">
-          <button class="px-4 py-2 rounded-lg border border-white hover:bg-white hover:text-authentz-purple transition">
-            Log In
-          </button>
-          <button class="px-4 py-2 rounded-lg bg-authentz-orange text-white hover:bg-opacity-90 transition">
-            Sign Up
-          </button>
-        </div>
-      </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <main class="container mx-auto px-6 py-20 text-center">
-      <h1 class="text-5xl md:text-6xl font-bold mb-8">
-        Welcome to Authentz
-      </h1>
-      <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-300">
-        Authentz transforms higher education recruitment, compliance, and admissions with AI-powered, data-driven solutions
-      </p>
-      <div class="flex justify-center space-x-4">
-        <button class="px-8 py-3 rounded-lg bg-authentz-orange text-white hover:bg-opacity-90 transition">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body style="background-color: #310075;">
+  <!-- Navigation -->
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center pl-6">
+        <a href="/pages/index.html">
+          <img src="/assets/images/primary_logo.png" alt="Logo" class="h-6 w-45 mr-2">
+        </a>
+      </div>
+
+      <!-- Hamburger Menu for Mobile -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div id="nav-links"
+        class="hidden md:flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-8 text-white">
+        <a href="/pages/index.html" class="hover:text-[#05DDBE]">Home</a>
+        <a href="/pages/Product&Service.html" class="hover:text-[#05DDBE]">Product & Services</a>
+        <a href="/pages/knock-knock.html" class="hover:text-[#05DDBE]">Knock Knock</a>
+        <a href="/pages/company.html" class="hover:text-[#05DDBE]">Company</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center space-x-4">
+        <button
+          class="px-4 py-2 text-[#F4550C] border border-[#F4550C] rounded-full hover:bg-[#F4550C] hover:text-white">
           Log In
         </button>
-        <button class="px-8 py-3 rounded-lg border border-white hover:bg-white hover:text-authentz-purple transition">
+        <button class="px-4 py-2 text-white bg-[#F4550C] rounded-full hover:bg-orange-600">
           Sign Up
         </button>
       </div>
+    </div>
 
-      <!-- Illustration Container -->
-      <div class="mt-20 max-w-4xl mx-auto bg-white rounded-lg p-4">
-        <div class="bg-authentz-orange rounded-lg p-8">
-          <img src="https://placehold.co/600x400/2D0B5A/FFFFFF/png" alt="Authentication Illustration" class="w-full rounded-lg">
-        </div>
-      </div>
-    </main>
-    <div class="bg-gray-50">
-      <div class="container mx-auto px-4 py-16">
-          <!-- Header Section -->
-          <div class="text-center mb-16">
-              <h1 class="text-4xl md:text-5xl font-bold text-brand-purple mb-6">Services & Products</h1>
-              <p class="text-gray-600 max-w-3xl mx-auto">
-                  Authentz delivers AI-powered solutions for recruitment, compliance, and admissions, ensuring faster, accurate, and 
-                  cost-effective processes. From profiling to visa prediction, we simplify workflows and drive results.
-              </p>
-          </div>
-  
-          <!-- Services Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <!-- Credenz Card -->
-              <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                  <div class="bg-brand-purple rounded-xl p-6 mb-4">
-                      <div class="text-brand-cyan text-3xl font-bold">az.</div>
-                      <div class="text-orange-500 font-semibold mt-1">CREDENZ</div>
-                  </div>
-                  <h3 class="text-xl font-semibold text-brand-purple mb-2">Pre Screening Interview</h3>
-                  <p class="text-gray-600">Automated pre-screening solution for efficient candidate evaluation</p>
-              </div>
-  
-              <!-- Prezenz Card -->
-              <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                  <div class="bg-brand-purple rounded-xl p-6 mb-4">
-                      <div class="text-brand-cyan text-3xl font-bold">az.</div>
-                      <div class="text-orange-500 font-semibold mt-1">PREZENZ</div>
-                  </div>
-                  <h3 class="text-xl font-semibold text-brand-purple mb-2">Credibility Interviews</h3>
-                  <p class="text-gray-600">Advanced interview platform for thorough candidate assessment</p>
-              </div>
-  
-              <!-- Screenz Card -->
-              <div class="bg-white rounded-2xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                  <div class="bg-brand-purple rounded-xl p-6 mb-4">
-                      <div class="text-brand-cyan text-3xl font-bold">az.</div>
-                      <div class="text-orange-500 font-semibold mt-1">SCREENZ</div>
-                  </div>
-                  <h3 class="text-xl font-semibold text-brand-purple mb-2">Market Development</h3>
-                  <p class="text-gray-600">Strategic solutions for market growth and expansion</p>
-              </div>
-          </div>
+    <!-- Mobile Navigation Links -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
+      <a href="#" class="block text-white hover:text-[#05DDBE]">Home</a>
+      <a href="/pages/Product&Service.html" class="block text-white hover:text-[#05DDBE]">Product & Services</a>
+      <a href="/pages/knock-knock.html" class="block text-white hover:text-[#05DDBE]">Knock Knock</a>
+      <a href="/pages/company.html" class="block text-white hover:text-[#05DDBE]">Company</a>
+    </div>
+  </nav>
+
+  <script>
+    // Toggle mobile menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+
+
+  <!-- Hero Section -->
+  <main class="container mx-auto px-6 py-0 text-center">
+    <h1 class="text-5xl md:text-6xl font-bold mb-8 text-white">
+      Welcome to Authentz
+    </h1>
+    <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-300">
+      Authentz transforms higher education recruitment, compliance, and admissions with AI-powered, data-driven
+      solutions
+    </p>
+    <div class="flex justify-center space-x-4">
+      <button class="px-8 py-3 rounded-lg bg-[#F4550C] text-white hover:bg-opacity-90 transition">
+        Log In
+      </button>
+      <button
+        class="px-8 py-3 rounded-lg border border-[#F4550C] text-white hover:bg-[#F4550C] hover:text-authentz-purple transition">
+        Sign Up
+      </button>
+    </div>
+
+    <!-- Illustration Container -->
+    <div class="mt-20 max-w-4xl mx-auto bg-white rounded-lg p-4">
+      <div class="bg-authentz-orange rounded-lg p-8">
+        <img src="/assets/images/video.png" alt="Authentication Illustration" class="w-full rounded-lg">
       </div>
     </div>
-    <div class="bg-gray-50">
+  </main>
+  <div class="bg-[#ECECEC]">
+    <div class="container mx-auto px-4 py-16">
+      <!-- Header Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-purple mb-6 text-[#310075]">Services & Products</h1>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Authentz delivers AI-powered solutions for recruitment, compliance, and admissions, ensuring faster, accurate,
+          and
+          cost-effective processes. From profiling to visa prediction, we simplify workflows and drive results.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
+        <!-- Credenz Card -->
+        <div class="flex flex-col items-center">
+          <div
+            class="relative px-4 py-6 bg-[#2B0B58] text-white font-semibold text-lg
+                rounded-bl-[3rem] rounded-tr-[3rem] border-8 border-white
+                shadow-lg hover:bg-[#250A4A] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-64 h-41">
+            <div class="bg-brand-purple rounded-xl p-6 mb-4">
+              <img src="/assets/images/secondary_logo.png" alt="az logo" class="w-25 h-25 object-contain">
+              <div class="text-orange-500 font-semibold mt-2 text-4xl">CREDENZ</div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075]">Pre Screening Interview
+          </h3>
+        </div>
+
+        <!-- Prezenz Card -->
+        <div class="flex flex-col items-center">
+          <div
+            class="relative px-4 py-6 bg-[#2B0B58] text-white font-semibold text-lg
+                rounded-bl-[3rem] rounded-tr-[3rem] rounded-br-[3rem] rounded-tl-[3rem] border-8 border-white
+                shadow-lg hover:bg-[#250A4A] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-64 h-41">
+            <div class="bg-brand-purple rounded-xl p-6 mb-4">
+              <img src="/assets/images/secondary_logo.png" alt="az logo" class="w-25 h-25 object-contain">
+              <div class="text-orange-500 font-semibold mt-2 text-4xl">PREZENZ</div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075]">Credibility Interviews
+          </h3>
+        </div>
+
+        <!-- Screenz Card -->
+        <div class="flex flex-col items-center">
+          <div
+            class="relative px-4 py-6 bg-[#2B0B58] text-white font-semibold text-lg
+                rounded-bl-[25rem] rounded-tr-[25rem] rounded-br-[0rem] rounded-tl-[25rem] border-8 border-white
+                shadow-lg hover:bg-[#250A4A] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-64 h-41">
+            <div class="bg-brand-purple rounded-xl p-6 mb-4">
+              <img src="/assets/images/secondary_logo.png" alt="az logo" class="w-25 h-25 object-contain">
+              <div class="text-orange-500 font-semibold mt-2 text-4xl">SCREENZ</div>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075]">Market Development</h3>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="bg-gray-50">
+    <div class="container mx-auto px-4 py-12">
+      <!-- Header Section -->
+      <header class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-[#310075] mb-6">We are located in</h1>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Our Board consists of leaders & visionaries from education and other fields who continue to guide mentor and
+          challenge our capabilities to ensure we provide our clients with ground breaking, cost effective and ground
+          breaking solutions continuously
+        </p>
+      </header>
+
+      <div class="flex flex-row justify-center items-center gap-4 flex-wrap md:flex-nowrap">
+        <!-- India -->
+        <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
+          <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India flag"
+            class="w-10 h-10 rounded-full mr-4">
+          <span class="text-gray-700 text-base font-medium">India</span>
+        </div>
+
+        <!-- UK -->
+        <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK flag"
+            class="w-10 h-10 rounded-full mr-4">
+          <span class="text-gray-700 text-base font-medium">UK</span>
+        </div>
+
+        <!-- USA -->
+        <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="USA flag"
+            class="w-10 h-10 rounded-full mr-4">
+          <span class="text-gray-700 text-base font-medium">USA</span>
+        </div>
+
+        <!-- Canada -->
+        <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
+            alt="Canada flag" class="w-10 h-10 rounded-full mr-4">
+          <span class="text-gray-700 text-base font-medium">Canada</span>
+        </div>
+
+        <!-- Australia -->
+        <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg"
+            alt="Australia flag" class="w-10 h-10 rounded-full mr-4">
+          <span class="text-gray-700 text-base font-medium">Australia</span>
+        </div>
+
+        <!-- Singapore -->
+        <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg" alt="Singapore flag"
+            class="w-10 h-10 rounded-full mr-4">
+          <span class="text-gray-700 text-base font-medium">Singapore</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Frequently Asked Items -->
+  <div class="relative bg-gray-100 h-1/2 p-4 sm:p-6 md:p-8 py-0">
+    <!-- Positioned A Image -->
+    <img src="/assets/images/a.png" alt="A" class="absolute top-0 left-0 w-30 opacity-75">
+
+    <!-- FAQ Content -->
+    <div class="max-w-3xl mx-auto mt-10">
+      <h1 class="text-4xl font-bold text-[#310075] mb-6 text-center">FAQs</h1>
+
+      <div class="space-y-2"> <!-- Reduced spacing -->
+        <!-- FAQ Item 1 -->
+        <div class="bg-white rounded-lg shadow-md">
+          <button onclick="toggleFaq(this)"
+            class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+            <span class="text-md font-semibold">What is the implementation time ?</span>
+            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </button>
+          <div class="hidden px-4 pb-2 text-gray-700 text-md font-semibold">
+            <p>Implementation time depends on the unique needs of each client , for standardized requirements
+              implementation can take 1-3 weeks time.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="bg-white rounded-lg shadow-md">
+          <button onclick="toggleFaq(this)"
+            class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+            <span class="text-md font-semibold">What is the pricing ?</span>
+            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </button>
+          <div class="hidden px-4 pb-2 text-gray-700 text-md font-semibold">
+            <p>Pricing can be provided after understanding the specific needs of each client.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 1 -->
+        <div class="bg-white rounded-lg shadow-md">
+          <button onclick="toggleFaq(this)"
+            class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+            <span class="text-md font-semibold">Is the technology reliable?</span>
+            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </button>
+          <div class="hidden px-4 pb-2 text-gray-700 text-md font-semibold">
+            <p>The platform is powered by next Gen AI with complete analysis , for complex interactions human audit is
+              also undertaken to provide accurate synopsis.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 1 -->
+        <div class="bg-white rounded-lg shadow-md">
+          <button onclick="toggleFaq(this)"
+            class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+            <span class="text-md font-semibold">Will support be provided at time of on boarding ?</span>
+            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </button>
+          <div class="hidden px-4 pb-2 text-gray-700 text-md font-semibold">
+            <p>There is an entire team which will be deployed for on boarding as well as to resolve issue in BAU stage ,
+              at no point in time will you lack support .</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 1 -->
+        <div class="bg-white rounded-lg shadow-md">
+          <button onclick="toggleFaq(this)"
+            class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+            <span class="text-md font-semibold">How scalable/ flexible is the product ?</span>
+            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+          </button>
+          <div class="hidden px-4 pb-2 text-gray-700 text-md font-semibold">
+            <p>An advance notice of 2 weeks should be sufficient to scale the product to manage 100% growth .</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Positioned Z Image -->
+    <img src="/assets/images/z.png" alt="Z" class="absolute bottom-20 right-0 w-30 opacity-75">
+  </div>
+
+  <!-- JavaScript for Toggle -->
+  <script>
+    function toggleFaq(button) {
+      // Check the clicked answer
+      const answer = button.nextElementSibling;
+      const isVisible = !answer.classList.contains('hidden');
+
+      // Hide all answers
+      document.querySelectorAll('.space-y-2 > div > div').forEach((el) => {
+        el.classList.add('hidden');
+        el.previousElementSibling.querySelector('svg').innerHTML =
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />';
+      });
+
+      // Toggle current answer visibility
+      if (!isVisible) {
+        answer.classList.remove('hidden');
+        button.querySelector('svg').innerHTML =
+          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6" />';
+      }
+    }
+  </script>
+
+
+
+  <!-- streamline -->
+  <div style="background-color: #F4550C;" class="text-white p-4">
+    <div class="bg-primary">
       <div class="container mx-auto px-4 py-12">
-          <!-- Header Section -->
-          <header class="text-center mb-12">
-              <h1 class="text-4xl font-bold text-purple-800 mb-6">We are located in</h1>
-              <p class="text-gray-600 max-w-3xl mx-auto">
-                  Our Board consists of leaders & visionaries from education and other fields who continue to guide mentor and challenge our capabilities to ensure we provide our clients with ground breaking, cost effective and ground breaking solutions continuously
-              </p>
-          </header>
-  
-          <!-- Countries Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <!-- India -->
-              <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow">
-                  <div class="w-12 h-12 flex-shrink-0">
-                      <img src="https://flagcdn.com/in.svg" alt="India flag" class="w-full h-full object-cover rounded-full">
-                  </div>
-                  <span class="text-xl font-semibold text-gray-800">India</span>
-              </div>
-  
-              <!-- UK -->
-              <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow">
-                  <div class="w-12 h-12 flex-shrink-0">
-                      <img src="https://flagcdn.com/gb.svg" alt="UK flag" class="w-full h-full object-cover rounded-full">
-                  </div>
-                  <span class="text-xl font-semibold text-gray-800">UK</span>
-              </div>
-  
-              <!-- USA -->
-              <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow">
-                  <div class="w-12 h-12 flex-shrink-0">
-                      <img src="https://flagcdn.com/us.svg" alt="USA flag" class="w-full h-full object-cover rounded-full">
-                  </div>
-                  <span class="text-xl font-semibold text-gray-800">USA</span>
-              </div>
-  
-              <!-- Canada -->
-              <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow">
-                  <div class="w-12 h-12 flex-shrink-0">
-                      <img src="https://flagcdn.com/ca.svg" alt="Canada flag" class="w-full h-full object-cover rounded-full">
-                  </div>
-                  <span class="text-xl font-semibold text-gray-800">Canada</span>
-              </div>
-  
-              <!-- Australia -->
-              <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow">
-                  <div class="w-12 h-12 flex-shrink-0">
-                      <img src="https://flagcdn.com/au.svg" alt="Australia flag" class="w-full h-full object-cover rounded-full">
-                  </div>
-                  <span class="text-xl font-semibold text-gray-800">Australia</span>
-              </div>
-  
-              <!-- Singapore -->
-              <div class="bg-white rounded-lg shadow-md p-6 flex items-center space-x-4 hover:shadow-lg transition-shadow">
-                  <div class="w-12 h-12 flex-shrink-0">
-                      <img src="https://flagcdn.com/sg.svg" alt="Singapore flag" class="w-full h-full object-cover rounded-full">
-                  </div>
-                  <span class="text-xl font-semibold text-gray-800">Singapore</span>
-              </div>
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2">
+            <img src="/assets/images/stremline.png" alt="Students in university"
+              class="rounded-lg shadow-xl w-full object-cover" />
           </div>
-      </div>
-    </div>
-    <div class="bg-gray-100 min-h-screen p-8">
-      <div class="max-w-3xl mx-auto">
-          <h1 class="text-5xl font-bold text-purple-800 mb-12 text-center">FAQs</h1>
-          
-          <div class="space-y-4">
-              <!-- FAQ Item 1 -->
-              <div class="bg-white rounded-lg shadow-md">
-                  <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                      <span class="text-lg font-semibold">Who should use the app?</span>
-                      <svg class="w-6 h-6 text-purple-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                      </svg>
-                  </button>
-              </div>
-  
-              <!-- FAQ Item 2 -->
-              <div class="bg-white rounded-lg shadow-md">
-                  <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                      <span class="text-lg font-semibold">What is included with my subscription?</span>
-                      <svg class="w-6 h-6 text-purple-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                      </svg>
-                  </button>
-              </div>
-  
-              <!-- FAQ Item 3 -->
-              <div class="bg-white rounded-lg shadow-md">
-                  <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                      <span class="text-lg font-semibold">How do I get paid?</span>
-                      <svg class="w-6 h-6 text-purple-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                      </svg>
-                  </button>
-              </div>
-  
-              <!-- FAQ Item 4 -->
-              <div class="bg-white rounded-lg shadow-md">
-                  <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                      <span class="text-lg font-semibold">Is my personal information safe?</span>
-                      <svg class="w-6 h-6 text-purple-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                      </svg>
-                  </button>
-              </div>
-  
-              <!-- FAQ Item 5 -->
-              <div class="bg-white rounded-lg shadow-md">
-                  <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                      <span class="text-lg font-semibold">How can we get in touch?</span>
-                      <svg class="w-6 h-6 text-purple-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                      </svg>
-                  </button>
-              </div>
-          </div>
-      </div>
-    </div>
-    <div style="background-color: #FF4500;" class="text-white p-4">
-      <div class="min-h-screen bg-primary">
-        <div class="container mx-auto px-4 py-16">
-          <div class="flex flex-col lg:flex-row items-center gap-12">
-            <div class="lg:w-1/2">
-              <img 
-                src="/recruitment-image.jpg" 
-                alt="Students in university" 
-                class="rounded-lg shadow-xl w-full object-cover"
-              />
-            </div>
-            <div class="lg:w-1/2 text-white">
-              <h1 class="text-4xl lg:text-5xl font-bold mb-6">
-                Streamline Your Recruitment and Admissions Compliance
-              </h1>
-              <p class="text-lg mb-8">
-                Empower your institution with innovative solutions that ensure compliance at every stage of recruitment and admissions. Simplify processes, improve efficiency, and stay ahead of regulatory requirements.
-              </p>
-              <div class="flex gap-4">
-                <a href="#" class="bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                  Get in touch →
-                </a>
-                <a href="#" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-                  Learn more
-                </a>
-              </div>
+          <div class="lg:w-1/2 text-white">
+            <h1 class="text-3xl lg:text-4xl font-bold mb-4">
+              Streamline Your Recruitment and Admissions Compliance
+            </h1>
+            <p class="text-base mb-6">
+              Empower your institution with innovative solutions that ensure compliance at every stage of recruitment
+              and admissions. Simplify processes, improve efficiency, and stay ahead of regulatory requirements.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+              <a href="#"
+                class="px-8 py-3 rounded-lg border-white bg-white  text-[#F4550C]  hover:bg-opacity-90 transition">
+                Get in touch →
+              </a>
+              <a href="#" class="px-8 py-3 rounded-lg border border-white text-white hover:bg-opacity-90 transition">
+                Learn more
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer class="bg-[#3D087B] text-white">
-      <div class="max-w-7xl mx-auto px-4 py-8">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8">
-          <!-- Logo -->
-          <div class="mb-6 md:mb-0">
-            <h2 class="text-2xl font-bold">authentz.</h2>
-          </div>
-          
-          <!-- Navigation -->
-          <nav class="flex flex-wrap justify-center gap-6 text-sm mb-6 md:mb-0">
-            <a href="#" class="hover:text-gray-300">Home</a>
-            <a href="#" class="hover:text-gray-300">Product & Services</a>
-            <a href="#" class="hover:text-gray-300">Knock Knock</a>
-            <a href="#" class="hover:text-gray-300">About Us</a>
-            <a href="#" class="hover:text-gray-300">Partners</a>
-            <a href="#" class="hover:text-gray-300">Contact Us</a>
-          </nav>
+  </div>
 
-          <!-- Social Icons -->
-          <div class="flex items-center gap-4">
-            <a href="#" class="text-white hover:opacity-75" aria-label="YouTube">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-              </svg>
-            </a>
-            <a href="#" class="text-white hover:opacity-75" aria-label="Facebook">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
-            <a href="#" class="text-white hover:opacity-75" aria-label="Twitter">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-            <a href="#" class="text-white hover:opacity-75" aria-label="Instagram">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
-              </svg>
-            </a>
-            <a href="#" class="text-white hover:opacity-75" aria-label="LinkedIn">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-          </div>
+
+  <!-- Footer -->
+  <footer class="bg-[#3D087B] text-white">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <!-- Logo -->
+        <div class="mb-6 md:mb-0">
+          <a href="/pages/index.html">
+            <img src="/assets/images/primary_logo.png" alt="Logo" class="h-5 w-35 mr-2">
+          </a>
         </div>
-        
-        <!-- Copyright -->
-        <div class="text-center text-sm">
-          <p>Copyright authentz.com©2024. All rights reserved</p>
+
+        <!-- Navigation -->
+        <nav class="flex flex-wrap justify-center gap-6 text-sm mb-6 md:mb-0">
+          <a href="#" class="hover:text-gray-300">Home</a>
+          <a href="#" class="hover:text-gray-300">Product & Services</a>
+          <a href="#" class="hover:text-gray-300">Knock Knock</a>
+          <a href="#" class="hover:text-gray-300">About Us</a>
+          <a href="#" class="hover:text-gray-300">Partners</a>
+          <a href="#" class="hover:text-gray-300">Contact Us</a>
+        </nav>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-white hover:opacity-75" aria-label="YouTube">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+          <a href="#" class="text-white hover:opacity-75" aria-label="Facebook">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+          <a href="#" class="text-white hover:opacity-75" aria-label="Twitter">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <a href="#" class="text-white hover:opacity-75" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+            </svg>
+          </a>
+          <a href="#" class="text-white hover:opacity-75" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
         </div>
       </div>
-    </footer>
-  </body>
+
+      <!-- Copyright -->
+      <div class="text-center text-sm">
+        <p>Copyright authentz.com©2024. All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
