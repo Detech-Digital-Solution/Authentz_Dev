@@ -1,4 +1,13 @@
-/* Custom CSS for additional styles */
+/* Link the font */
+@font-face {
+  font-family: 'TT Supermolot Neue';
+  src: url('https://yourfontprovider.com/tt-supermolot-neue-condensed-medium.woff2') format('woff2'),
+       url('https://yourfontprovider.com/tt-supermolot-neue-condensed-medium.woff') format('woff');
+  font-weight: 500; /* Adjust as necessary */
+  font-style: normal;
+}
+
+/* Apply the font globally */
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'TT Supermolot Neue', sans-serif;
 }

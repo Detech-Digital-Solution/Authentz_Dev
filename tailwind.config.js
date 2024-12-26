@@ -6,6 +6,9 @@ module.exports = {
         primary: '#1a202c',
         secondary: '#2d3748',
       },
+      fontFamily: {
+        custom: ['TT Supermolot Neue', 'sans-serif'], // Add your custom font
+      },
     },
   },
   plugins: [],
