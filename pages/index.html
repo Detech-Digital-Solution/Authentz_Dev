@@ -4,26 +4,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Authentz</title>
+  <title>Home - Authentz</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="path/to/custom.css">
 </head>
 
 <body style="background-color: #310075;">
+
+  <!-- Splash Screen -->
+  <div id="splash-screen" class="fixed inset-0 flex items-center justify-center bg-[#310075] z-50">
+    <img src="/assets/images/primary_logo.png" alt="Logo" class="h-20 animate-pulse">
+  </div>
+  <script>
+    window.addEventListener("load", () => {
+      const splashScreen = document.getElementById("splash-screen");
+      const mainContent = document.getElementById("main-content");
+
+      splashScreen.classList.add("hidden");
+      mainContent.classList.remove("hidden");
+    });
+  </script>
+
   <!-- Navigation -->
   <nav class="container mx-auto px-6 py-4">
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between md:mx-20">
       <!-- Logo -->
       <div class="flex items-center pl-6">
         <a href="/pages/index.html">
-          <img src="/assets/images/primary_logo.png" alt="Logo" class="h-6 w-45 mr-2">
+          <img src="/assets/images/primary_logo.png" alt="Logo" class="h-12 w-45 mr-2">
         </a>
       </div>
 
       <!-- Hamburger Menu for Mobile -->
       <div class="md:hidden">
         <button id="menu-toggle" class="text-white focus:outline-none">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg id="menu-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
@@ -34,7 +55,21 @@
         <a href="/pages/index.html" class="hover:text-[#05DDBE]">Home</a>
         <a href="/pages/Product&Service.html" class="hover:text-[#05DDBE]">Product & Services</a>
         <a href="/pages/knock-knock.html" class="hover:text-[#05DDBE]">Knock Knock</a>
-        <a href="/pages/company.html" class="hover:text-[#05DDBE]">Company</a>
+        <div class="relative">
+          <button id="dropdown-toggle"
+            class="flex items-center space-x-2 text-white hover:text-[#05DDBE] focus:outline-none">
+            <span>Company</span>
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="dropdown-menu"
+            class="absolute hidden bg-[2B0B58] text-white rounded-md shadow-lg mt-2 w-44 bg-gradient-to-r from-[#2B0B58] to-[#2B0B58]">
+            <a href="/pages/company.html" class="block px-4 py-2 hover:text-[#05DDBE]">About Us</a>
+            <a href="/pages/newsandinsights.html" class="block px-4 py-2 hover:text-[#05DDBE]">News & Insights</a>
+          </div>
+        </div>
       </div>
 
       <!-- Action Buttons -->
@@ -51,10 +86,11 @@
 
     <!-- Mobile Navigation Links -->
     <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4">
-      <a href="#" class="block text-white hover:text-[#05DDBE]">Home</a>
+      <a href="/pages/index.html" class="block text-white hover:text-[#05DDBE]">Home</a>
       <a href="/pages/Product&Service.html" class="block text-white hover:text-[#05DDBE]">Product & Services</a>
       <a href="/pages/knock-knock.html" class="block text-white hover:text-[#05DDBE]">Knock Knock</a>
-      <a href="/pages/company.html" class="block text-white hover:text-[#05DDBE]">Company</a>
+      <a href="/pages/company.html" class="block text-white hover:text-[#05DDBE]">About Us</a>
+      <a href="/pages/newsandinsights.html" class="block text-white hover:text-[#05DDBE]">News & Insights</a>
     </div>
   </nav>
 
@@ -62,24 +98,44 @@
     // Toggle mobile menu
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
 
     menuToggle.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
+      menuIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    });
+
+    // Dropdown toggle functionality
+    const dropdownToggle = document.getElementById('dropdown-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+
+    dropdownToggle.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Close the dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.add('hidden');
+      }
     });
   </script>
 
 
+
   <!-- Hero Section -->
-  <main class="container mx-auto px-6 py-0 text-center">
-    <h1 class="text-5xl md:text-6xl font-bold mb-8 text-white">
+  <main class="container mx-auto px-6 py-10 text-center">
+    <h1 class="text-4xl md:text-7xl font-bold mb-8 text-white">
       Welcome to Authentz
     </h1>
-    <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-gray-300">
-      Authentz transforms higher education recruitment, compliance, and admissions with AI-powered, data-driven
+    <p class="text-3xl md:text-5xl max-w-10xl mx-auto mb-12 text-gray-300 leading-tight md:max-w-8xl">
+      Authentz transforms higher education recruitment,<br/>compliance, and admissions with AI-powered,<br/>data-driven
       solutions
     </p>
     <div class="flex justify-center space-x-4">
-      <button class="px-8 py-3 rounded-lg bg-[#F4550C] text-white hover:bg-opacity-90 transition">
+      <button class="px-8 py-3 rounded-lg bg-[#F4550C] text-white hover:bg-opacity-90 transition hover:text-[#310075]">
         Log In
       </button>
       <button
@@ -100,7 +156,7 @@
       <!-- Header Section -->
       <div class="text-center mb-16">
         <h1 class="text-4xl md:text-5xl font-bold text-brand-purple mb-6 text-[#310075]">Services & Products</h1>
-        <p class="text-gray-600 max-w-3xl mx-auto">
+        <p class="text-gray-600 max-w-4xl mx-auto">
           Authentz delivers AI-powered solutions for recruitment, compliance, and admissions, ensuring faster, accurate,
           and
           cost-effective processes. From profiling to visa prediction, we simplify workflows and drive results.
@@ -112,45 +168,45 @@
         <!-- Credenz Card -->
         <div class="flex flex-col items-center">
           <div
-            class="relative px-4 py-6 bg-[#2B0B58] text-white font-semibold text-lg
-                rounded-bl-[3rem] rounded-tr-[3rem] border-8 border-white
+            class="relative px-4 py-6 bg-[#310075] text-white font-semibold text-lg
+                rounded-bl-[8rem] rounded-tr-[3rem] border-8 border-white
                 shadow-lg hover:bg-[#250A4A] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-64 h-41">
             <div class="bg-brand-purple rounded-xl p-6 mb-4">
               <img src="/assets/images/secondary_logo.png" alt="az logo" class="w-25 h-25 object-contain">
-              <div class="text-orange-500 font-semibold mt-2 text-4xl">CREDENZ</div>
+              <div class="text-[#F4550C] font-semibold mt-2 text-4xl">CREDENZ</div>
             </div>
           </div>
-          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075]">Pre Screening Interview
+          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075] hover:text-[#F4550C]">Pre Screening Interview
           </h3>
         </div>
 
         <!-- Prezenz Card -->
         <div class="flex flex-col items-center">
           <div
-            class="relative px-4 py-6 bg-[#2B0B58] text-white font-semibold text-lg
+            class="relative px-4 py-6 bg-[#310075] text-white font-semibold text-lg
                 rounded-bl-[3rem] rounded-tr-[3rem] rounded-br-[3rem] rounded-tl-[3rem] border-8 border-white
                 shadow-lg hover:bg-[#250A4A] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-64 h-41">
             <div class="bg-brand-purple rounded-xl p-6 mb-4">
               <img src="/assets/images/secondary_logo.png" alt="az logo" class="w-25 h-25 object-contain">
-              <div class="text-orange-500 font-semibold mt-2 text-4xl">PREZENZ</div>
+              <div class="text-[#F4550C] font-semibold mt-2 text-4xl">PREZENZ</div>
             </div>
           </div>
-          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075]">Credibility Interviews
+          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075] hover:text-[#F4550C]">Credibility Interviews
           </h3>
         </div>
 
         <!-- Screenz Card -->
         <div class="flex flex-col items-center">
           <div
-            class="relative px-4 py-6 bg-[#2B0B58] text-white font-semibold text-lg
+            class="relative px-4 py-6 bg-[#310075] text-white font-semibold text-lg
                 rounded-bl-[25rem] rounded-tr-[25rem] rounded-br-[0rem] rounded-tl-[25rem] border-8 border-white
                 shadow-lg hover:bg-[#250A4A] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl w-64 h-41">
             <div class="bg-brand-purple rounded-xl p-6 mb-4">
               <img src="/assets/images/secondary_logo.png" alt="az logo" class="w-25 h-25 object-contain">
-              <div class="text-orange-500 font-semibold mt-2 text-4xl">SCREENZ</div>
+              <div class="text-[#F4550C] font-semibold mt-2 text-4xl">SCREENZ</div>
             </div>
           </div>
-          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075]">Market Development</h3>
+          <h3 class="text-xl font-semibold text-brand-purple mt-4 text-center text-[#310075] hover:text-[#F4550C]">Market Development</h3>
         </div>
       </div>
 
@@ -162,7 +218,7 @@
       <!-- Header Section -->
       <header class="text-center mb-12">
         <h1 class="text-4xl font-bold text-[#310075] mb-6">We are located in</h1>
-        <p class="text-gray-600 max-w-3xl mx-auto">
+        <p class="text-gray-600 max-w-4xl mx-auto">
           Our Board consists of leaders & visionaries from education and other fields who continue to guide mentor and
           challenge our capabilities to ensure we provide our clients with ground breaking, cost effective and ground
           breaking solutions continuously
@@ -172,43 +228,37 @@
       <div class="flex flex-row justify-center items-center gap-4 flex-wrap md:flex-nowrap">
         <!-- India -->
         <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
-          <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India flag"
-            class="w-10 h-10 rounded-full mr-4">
+          <img src="https://flagcdn.com/w40/in.png" alt="India flag" class="w-10 h-10 rounded-full mr-4">
           <span class="text-gray-700 text-base font-medium">India</span>
         </div>
 
         <!-- UK -->
         <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
-          <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="UK flag"
-            class="w-10 h-10 rounded-full mr-4">
+          <img src="https://flagcdn.com/w40/gb.png" alt="UK flag" class="w-10 h-10 rounded-full mr-4">
           <span class="text-gray-700 text-base font-medium">UK</span>
         </div>
 
         <!-- USA -->
         <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
-          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="USA flag"
-            class="w-10 h-10 rounded-full mr-4">
+          <img src="https://flagcdn.com/w40/us.png" alt="USA flag" class="w-10 h-10 rounded-full mr-4">
           <span class="text-gray-700 text-base font-medium">USA</span>
         </div>
 
         <!-- Canada -->
         <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg"
-            alt="Canada flag" class="w-10 h-10 rounded-full mr-4">
+          <img src="https://flagcdn.com/w40/ca.png" alt="Canada" class="w-10 h-10 rounded-full mr-4">
           <span class="text-gray-700 text-base font-medium">Canada</span>
         </div>
 
         <!-- Australia -->
         <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_%28converted%29.svg"
-            alt="Australia flag" class="w-10 h-10 rounded-full mr-4">
+          <img src="https://flagcdn.com/w40/au.png" alt="Australia" class="w-10 h-10 rounded-full mr-4">
           <span class="text-gray-700 text-base font-medium">Australia</span>
         </div>
 
         <!-- Singapore -->
         <div class="flex items-center bg-[#F0F0F0] rounded-xl px-8 py-4 shadow-sm hover:shadow-md transition-shadow">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Singapore.svg" alt="Singapore flag"
-            class="w-10 h-10 rounded-full mr-4">
+          <img src="https://flagcdn.com/w40/sg.png" alt="Singapore flag" class="w-10 h-10 rounded-full mr-4">
           <span class="text-gray-700 text-base font-medium">Singapore</span>
         </div>
       </div>
@@ -216,21 +266,21 @@
   </div>
 
   <!-- Frequently Asked Items -->
-  <div class="relative bg-gray-100 h-1/2 p-4 sm:p-6 md:p-8 py-0">
+  <div class="relative bg-gray-100 h-full p-4 sm:p-6 md:p-8 py-0">
     <!-- Positioned A Image -->
     <img src="/assets/images/a.png" alt="A" class="absolute top-0 left-0 w-30 opacity-75">
 
     <!-- FAQ Content -->
-    <div class="max-w-3xl mx-auto mt-10">
+    <div class="max-w-3xl mx-auto mt-10 pb-10">
       <h1 class="text-4xl font-bold text-[#310075] mb-6 text-center">FAQs</h1>
 
-      <div class="space-y-2"> <!-- Reduced spacing -->
+      <div class="space-y-4"> <!-- Reduced spacing -->
         <!-- FAQ Item 1 -->
         <div class="bg-white rounded-lg shadow-md">
           <button onclick="toggleFaq(this)"
             class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
             <span class="text-md font-semibold">What is the implementation time ?</span>
-            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+            <svg class="w-5 h-5 text-[#310075] transition-transform duration-300" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
@@ -246,7 +296,7 @@
           <button onclick="toggleFaq(this)"
             class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
             <span class="text-md font-semibold">What is the pricing ?</span>
-            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+            <svg class="w-5 h-5 text-[#310075] transition-transform duration-300" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
@@ -261,7 +311,7 @@
           <button onclick="toggleFaq(this)"
             class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
             <span class="text-md font-semibold">Is the technology reliable?</span>
-            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+            <svg class="w-5 h-5 text-[#310075] transition-transform duration-300" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
@@ -277,7 +327,7 @@
           <button onclick="toggleFaq(this)"
             class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
             <span class="text-md font-semibold">Will support be provided at time of on boarding ?</span>
-            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+            <svg class="w-5 h-5 text-[#310075] transition-transform duration-300" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
@@ -293,7 +343,7 @@
           <button onclick="toggleFaq(this)"
             class="w-full px-4 py-3 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
             <span class="text-md font-semibold">How scalable/ flexible is the product ?</span>
-            <svg class="w-5 h-5 text-purple-800 transition-transform duration-300" fill="none" stroke="currentColor"
+            <svg class="w-5 h-5 text-[#310075] transition-transform duration-300" fill="none" stroke="currentColor"
               viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
@@ -307,7 +357,7 @@
     </div>
 
     <!-- Positioned Z Image -->
-    <img src="/assets/images/z.png" alt="Z" class="absolute bottom-20 right-0 w-30 opacity-75">
+    <img src="/assets/images/z.png" alt="Z" class="absolute pb-8 bottom-0 right-0 w-30 opacity-75">
   </div>
 
   <!-- JavaScript for Toggle -->
@@ -318,7 +368,7 @@
       const isVisible = !answer.classList.contains('hidden');
 
       // Hide all answers
-      document.querySelectorAll('.space-y-2 > div > div').forEach((el) => {
+      document.querySelectorAll('.space-y-4 > div > div').forEach((el) => {
         el.classList.add('hidden');
         el.previousElementSibling.querySelector('svg').innerHTML =
           '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />';
@@ -354,7 +404,7 @@
             </p>
             <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
               <a href="#"
-                class="px-8 py-3 rounded-lg border-white bg-white  text-[#F4550C]  hover:bg-opacity-90 transition">
+                class="px-8 py-3 rounded-lg border-white bg-white  text-[#F4550C]  hover:bg-opacity-90 transition hover:text-[#310075]">
                 Get in touch →
               </a>
               <a href="#" class="px-8 py-3 rounded-lg border border-white text-white hover:bg-opacity-90 transition">
@@ -369,24 +419,23 @@
 
 
   <!-- Footer -->
-  <footer class="bg-[#3D087B] text-white">
+  <footer class="bg-[#310075] text-white">
     <div class="max-w-7xl mx-auto px-4 py-8">
       <div class="flex flex-col md:flex-row justify-between items-center mb-8">
         <!-- Logo -->
         <div class="mb-6 md:mb-0">
           <a href="/pages/index.html">
-            <img src="/assets/images/primary_logo.png" alt="Logo" class="h-5 w-35 mr-2">
+            <img src="/assets/images/primary_logo.png" alt="Logo" class="h-8 w-35 mr-2">
           </a>
         </div>
 
         <!-- Navigation -->
         <nav class="flex flex-wrap justify-center gap-6 text-sm mb-6 md:mb-0">
-          <a href="#" class="hover:text-gray-300">Home</a>
-          <a href="#" class="hover:text-gray-300">Product & Services</a>
-          <a href="#" class="hover:text-gray-300">Knock Knock</a>
-          <a href="#" class="hover:text-gray-300">About Us</a>
-          <a href="#" class="hover:text-gray-300">Partners</a>
-          <a href="#" class="hover:text-gray-300">Contact Us</a>
+          <a href="/pages/index.html" class="hover:text-gray-300">Home</a>
+          <a href="/pages/Product&Service.html" class="hover:text-gray-300">Product & Services</a>
+          <a href="/pages/knock-knock.html" class="hover:text-gray-300">Knock Knock</a>
+          <a href="/pages/company.html" class="hover:text-gray-300">About Us</a>
+          <a href="/pages/newsandinsights.html" class="hover:text-gray-300">News & Insights</a>
         </nav>
 
         <!-- Social Icons -->
@@ -426,7 +475,7 @@
 
       <!-- Copyright -->
       <div class="text-center text-sm">
-        <p>Copyright authentz.com©2024. All rights reserved</p>
+        <p>©2024 authentz.com</p>
       </div>
     </div>
   </footer>
